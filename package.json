@@ -1,0 +1,12 @@
+{
+  "name": "utopia-desenvolvimentos-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Site institucional da Utopia Desenvolvimentos (build estático do Tailwind CSS).",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/tailwind-input.css -o ./css/tailwind.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.19"
+  }
+}
