@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulso Utopia — App de remédios, consultas e rotina de saúde | Utopia Desenvolvimentos</title>
+  <meta name="description" content="Pulso Utopia: organize medicamentos, consultas, tarefas e compromissos em um só lugar, com alarmes sonoros e avisos por voz. Pensado para idosos, pessoas com condições crônicas e cuidadores.">
+  <meta name="theme-color" content="#09090b">
+  <link rel="icon" type="image/png" href="icone_utopia.png">
+  <link rel="apple-touch-icon" href="icone_utopia.png">
+  <link rel="canonical" href="https://www.utopiadesenvolvimentos.com.br/pulso-utopia.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Utopia Desenvolvimentos">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://www.utopiadesenvolvimentos.com.br/pulso-utopia.html">
+  <meta property="og:title" content="Pulso Utopia — Sua saúde no ritmo certo, todos os dias">
+  <meta property="og:description" content="Medicamentos, consultas, tarefas e compromissos organizados em um só lugar, com alarmes sonoros e avisos por voz.">
+  <meta property="og:image" content="https://www.utopiadesenvolvimentos.com.br/assets/apps/pulso-utopia-01.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pulso Utopia — Sua saúde no ritmo certo, todos os dias">
+  <meta name="twitter:description" content="Medicamentos, consultas, tarefas e compromissos organizados em um só lugar, com alarmes sonoros e avisos por voz.">
+  <meta name="twitter:image" content="https://www.utopiadesenvolvimentos.com.br/assets/apps/pulso-utopia-01.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Pulso Utopia",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Android",
+    "description": "App para organizar medicamentos, consultas, tarefas e compromissos, com alarmes sonoros e avisos por voz.",
+    "offers": { "@type": "Offer", "price": "14.99", "priceCurrency": "BRL", "description": "Teste grátis por 14 dias, depois R$ 14,99/mês, sem fidelidade." },
+    "provider": {
+      "@type": "Organization",
+      "name": "Utopia Desenvolvimentos",
+      "url": "https://www.utopiadesenvolvimentos.com.br/",
+      "email": "utopiadesenvolvimentos@gmail.com",
+      "telephone": "+5527996941622"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="css/tailwind.css">
+  <style>
+    body { background-color: #09090b; color: #fff; margin: 0; overflow-x: hidden; font-family: 'Inter', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Inter', sans-serif; }
+    ::selection { background-color: rgba(255, 255, 255, 0.1); }
+    .glass-card { background-color: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8); border-radius: 24px; transition: transform 300ms ease, border-color 300ms ease, background-color 300ms ease; }
+    .glass-card:hover { transform: scale(1.02); z-index: 100; border-color: rgba(52, 211, 153, 0.28); }
+    .god-rays-container { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; background: #09090b; display: flex; justify-content: center; }
+    .ray-core { position: absolute; top: -6%; left: 50%; width: 18vw; height: 16vh; transform: translateX(-50%); background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.9) 0%, rgba(255, 244, 214, 0.4) 45%, rgba(255, 244, 214, 0) 75%); filter: blur(30px); mix-blend-mode: screen; animation: coreBreathe 6s ease-in-out infinite; }
+    .ray { position: absolute; top: -10%; left: 50%; width: 3vw; height: 140vh; background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85) 0%, rgba(255, 244, 214, 0.28) 22%, rgba(255, 244, 214, 0.08) 45%, transparent 75%); filter: blur(6px); mix-blend-mode: screen; transform-origin: top center; will-change: opacity; }
+    .ray-1 { width: 2.5vw; animation: sway1 9s cubic-bezier(0.45,0,0.55,1) infinite, shimmer 5.5s ease-in-out infinite; }
+    .ray-2 { width: 4vw; animation: sway2 12s cubic-bezier(0.45,0,0.55,1) infinite 0.4s, shimmer 7s ease-in-out infinite 0.6s; }
+    .ray-3 { width: 2vw; animation: sway3 10s cubic-bezier(0.45,0,0.55,1) infinite 1.1s, shimmer 6s ease-in-out infinite 1.2s; }
+    .ray-4 { width: 3vw; animation: sway4 14s cubic-bezier(0.45,0,0.55,1) infinite 0.2s, shimmer 8s ease-in-out infinite 0.3s; }
+    .ray-5 { width: 2.2vw; animation: sway5 10.5s cubic-bezier(0.45,0,0.55,1) infinite 1.6s, shimmer 6.5s ease-in-out infinite 1.6s; }
+    .ray-6 { width: 4.5vw; animation: sway6 13s cubic-bezier(0.45,0,0.55,1) infinite 0.8s, shimmer 7.5s ease-in-out infinite 0.9s; }
+    .ray-7 { width: 2.3vw; animation: sway7 9.5s cubic-bezier(0.45,0,0.55,1) infinite 1.9s, shimmer 5.8s ease-in-out infinite 1.9s; }
+    @keyframes coreBreathe { 0% { opacity: 0.5; transform: translateX(-50%) scale(0.9); } 50% { opacity: 1; transform: translateX(-50%) scale(1.1); } 100% { opacity: 0.5; transform: translateX(-50%) scale(0.9); } }
+    @keyframes sway1 { 0% { transform: translateX(-50%) rotate(-34deg); } 30% { transform: translateX(-50%) rotate(-27deg); } 65% { transform: translateX(-50%) rotate(-39deg); } 100% { transform: translateX(-50%) rotate(-34deg); } }
+    @keyframes sway2 { 0% { transform: translateX(-50%) rotate(-22deg); } 35% { transform: translateX(-50%) rotate(-15deg); } 70% { transform: translateX(-50%) rotate(-27deg); } 100% { transform: translateX(-50%) rotate(-22deg); } }
+    @keyframes sway3 { 0% { transform: translateX(-50%) rotate(-11deg); } 40% { transform: translateX(-50%) rotate(-4deg); } 75% { transform: translateX(-50%) rotate(-16deg); } 100% { transform: translateX(-50%) rotate(-11deg); } }
+    @keyframes sway4 { 0% { transform: translateX(-50%) rotate(-2deg); } 30% { transform: translateX(-50%) rotate(5deg); } 65% { transform: translateX(-50%) rotate(-8deg); } 100% { transform: translateX(-50%) rotate(-2deg); } }
+    @keyframes sway5 { 0% { transform: translateX(-50%) rotate(9deg); } 35% { transform: translateX(-50%) rotate(16deg); } 70% { transform: translateX(-50%) rotate(4deg); } 100% { transform: translateX(-50%) rotate(9deg); } }
+    @keyframes sway6 { 0% { transform: translateX(-50%) rotate(21deg); } 40% { transform: translateX(-50%) rotate(28deg); } 75% { transform: translateX(-50%) rotate(15deg); } 100% { transform: translateX(-50%) rotate(21deg); } }
+    @keyframes sway7 { 0% { transform: translateX(-50%) rotate(33deg); } 30% { transform: translateX(-50%) rotate(26deg); } 65% { transform: translateX(-50%) rotate(39deg); } 100% { transform: translateX(-50%) rotate(33deg); } }
+    @keyframes shimmer { 0% { opacity: 0.35; } 50% { opacity: 0.9; } 100% { opacity: 0.35; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; } }
+    .fade-in { animation: fadeIn 1.2s ease-out both; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    html { scroll-behavior: smooth; }
+    .mobile-menu { display: none; }
+    .mobile-menu.is-open { display: flex; }
+    :focus-visible { outline: 3px solid #34d399; outline-offset: 4px; }
+    @media (max-width: 767px) { .god-rays-container { opacity: 0.55; } .ray:nth-of-type(n+5) { display: none; } .glass-card:hover { transform: none; } }
+    .device-frame-phone { max-width: 220px; margin: 0 auto; border: 7px solid #18181b; border-radius: 2rem; background: #070707; overflow: hidden; box-shadow: 0 25px 55px rgba(0,0,0,.55); }
+    .device-frame-phone .device-frame-notch { height: 1.1rem; background: #18181b; display: flex; justify-content: center; align-items: flex-end; padding-bottom: .25rem; }
+    .device-frame-phone .device-frame-notch span { width: 2.5rem; height: .3rem; border-radius: 999px; background: #000; }
+    .device-frame-phone img { display: block; width: 100%; height: auto; }
+    .status-pill { background: rgba(52,211,153,.1); border: 1px solid rgba(52,211,153,.3); color: #6ee7b7; }
+  </style>
+</head>
+<body class="font-body selection:bg-white/10">
+
+  <div class="god-rays-container">
+    <div class="ray-core"></div>
+    <div class="ray ray-1"></div>
+    <div class="ray ray-2"></div>
+    <div class="ray ray-3"></div>
+    <div class="ray ray-4"></div>
+    <div class="ray ray-5"></div>
+    <div class="ray ray-6"></div>
+    <div class="ray ray-7"></div>
+  </div>
+
+  <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#09090b]/50 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
+      <a href="index.html" class="flex items-center">
+        <img src="logo_utopia.webp" alt="Utopia Desenvolvimentos" class="w-20 md:w-24 h-auto rounded-xl" width="96" height="96">
+      </a>
+      <div class="hidden md:flex items-center gap-8" aria-label="Navegação principal">
+        <a href="index.html#solucoes" class="text-secondary hover:text-white transition-colors text-sm">Soluções</a>
+        <a href="memorial-eterno.html" class="text-secondary hover:text-white transition-colors text-sm">Memorial Eterno</a>
+        <a href="index.html#aplicativos" class="text-secondary hover:text-white transition-colors text-sm">Serviços</a>
+        <a href="index.html#projetos" class="text-accent hover:text-emerald-300 transition-colors text-sm font-semibold">Projetos</a>
+        <a href="index.html#sistema" class="text-secondary hover:text-white transition-colors text-sm">Como trabalhamos</a>
+        <a href="index.html#precos" class="text-secondary hover:text-white transition-colors text-sm">Preços</a>
+        <a href="index.html#faq" class="text-secondary hover:text-white transition-colors text-sm">Dúvidas</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/5527996941622?text=Ol%C3%A1%21%20Quero%20ser%20avisado%20quando%20o%20Pulso%20Utopia%20estiver%20dispon%C3%ADvel." target="_blank" rel="noopener noreferrer" class="bg-white text-black rounded-full px-4 md:px-5 py-2 text-sm font-medium hover:scale-105 transition-transform">Solicitar orçamento</a>
+        <button id="menuButton" class="md:hidden w-10 h-10 rounded-full border border-white/15 text-white flex items-center justify-center" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden flex-col gap-4 px-6 pb-5 border-t border-white/5" aria-label="Navegação móvel">
+      <a href="index.html#solucoes" class="text-secondary pt-4">Soluções</a>
+      <a href="memorial-eterno.html" class="text-secondary">Memorial Eterno</a>
+      <a href="index.html#aplicativos" class="text-secondary">Serviços</a>
+      <a href="index.html#projetos" class="text-accent font-semibold">Projetos</a>
+      <a href="index.html#sistema" class="text-secondary">Como trabalhamos</a>
+      <a href="index.html#precos" class="text-secondary">Preços</a>
+      <a href="index.html#faq" class="text-secondary">Dúvidas</a>
+    </div>
+  </nav>
+
+  <main class="relative z-20 max-w-7xl mx-auto px-6 pt-24 md:pt-32">
+    <a href="index.html#projetos" class="inline-flex items-center gap-2 text-sm text-secondary hover:text-white transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+      Voltar para Projetos
+    </a>
+  </main>
+
+  <section class="relative z-20 max-w-7xl mx-auto px-6 pt-6 pb-24">
+    <div class="max-w-3xl fade-in">
+      <span class="status-pill inline-block rounded-full px-3 py-1 text-xs">Projeto publicado</span>
+      <h1 class="font-heading text-4xl md:text-6xl font-semibold tracking-[-0.03em] mt-4">Pulso Utopia</h1>
+      <p class="text-2xl text-zinc-100 mt-5 leading-relaxed font-medium">Sua saúde no ritmo certo, todos os dias.</p>
+      <p class="text-secondary mt-5 leading-relaxed">O Pulso Utopia ajuda você a organizar medicamentos, consultas, tarefas e compromissos em um só lugar. Com alarmes sonoros e avisos por voz para que nada importante seja esquecido.</p>
+      <p class="text-secondary mt-4 leading-relaxed">Criado especialmente para idosos, pessoas com doenças crônicas, pessoas em tratamentos temporários e familiares ou cuidadores que desejam acompanhar a rotina de saúde com mais tranquilidade.</p>
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <a href="https://wa.me/5527996941622?text=Ol%C3%A1%21%20Quero%20ser%20avisado%20quando%20o%20Pulso%20Utopia%20estiver%20dispon%C3%ADvel." target="_blank" rel="noopener noreferrer" class="bg-white text-black rounded-full px-6 py-3 text-sm font-semibold hover:scale-105 transition-transform">Quero ser avisado no lançamento</a>
+        <span class="border border-white/20 rounded-full px-6 py-3 text-sm font-medium opacity-70">Em breve na Google Play</span>
+      </div>
+    </div>
+
+    <div class="max-w-3xl mt-16">
+      <h2 class="font-heading text-3xl font-semibold">Mais segurança para quem toma medicamentos</h2>
+      <p class="text-secondary mt-4 leading-relaxed">Registre os horários dos remédios e receba alarmes com som e voz, mesmo quando o aplicativo estiver fechado. Assim, fica mais fácil saber o que precisa ser tomado e evitar aquela dúvida: "Será que eu já tomei meu remédio hoje?"</p>
+    </div>
+
+    <div class="mt-16">
+      <h2 class="font-heading text-3xl font-semibold text-center">Tudo organizado em um só lugar</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 max-w-3xl mx-auto">
+        <div class="glass-card p-5 text-sm text-zinc-200 flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Alarmes personalizados para cada medicamento</div>
+        <div class="glass-card p-5 text-sm text-zinc-200 flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Avisos sonoros e falados</div>
+        <div class="glass-card p-5 text-sm text-zinc-200 flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Controle do estoque de remédios</div>
+        <div class="glass-card p-5 text-sm text-zinc-200 flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Lembretes quando estiver na hora de comprar mais</div>
+        <div class="glass-card p-5 text-sm text-zinc-200 flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Registro de consultas e compromissos</div>
+        <div class="glass-card p-5 text-sm text-zinc-200 flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Criação de tarefas e lembretes diários</div>
+        <div class="glass-card p-5 text-sm text-zinc-200 flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Sincronização com o Google Agenda</div>
+        <div class="glass-card p-5 text-sm text-zinc-200 flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Rotina simples e fácil de acompanhar</div>
+      </div>
+    </div>
+
+    <div class="mt-20">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-accent text-sm font-medium">Por dentro do app</span>
+        <h2 class="font-heading text-3xl md:text-4xl font-semibold mt-2">Telas pensadas para o dia a dia</h2>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-10 items-start">
+        <figure class="device-frame-phone">
+          <div class="device-frame-notch"><span></span></div>
+          <img src="assets/apps/pulso-utopia-01.webp" alt="Tela inicial do Pulso Utopia">
+        </figure>
+        <figure class="device-frame-phone">
+          <div class="device-frame-notch"><span></span></div>
+          <img src="assets/apps/pulso-utopia-02.webp" alt="Cadastro de medicamentos no Pulso Utopia">
+        </figure>
+        <figure class="device-frame-phone">
+          <div class="device-frame-notch"><span></span></div>
+          <img src="assets/apps/pulso-utopia-03.webp" alt="Agenda de compromissos e consultas no Pulso Utopia">
+        </figure>
+        <figure class="device-frame-phone">
+          <div class="device-frame-notch"><span></span></div>
+          <img src="assets/apps/pulso-utopia-04.webp" alt="Organização de tarefas do dia a dia no Pulso Utopia">
+        </figure>
+      </div>
+    </div>
+
+    <div class="max-w-3xl mx-auto mt-20 text-center">
+      <span class="text-accent text-sm font-medium">Pensado para facilitar a vida real</span>
+      <p class="text-secondary mt-4 leading-relaxed">Para quem convive com fibromialgia ou outras condições crônicas, o cansaço, a dor e as alterações de memória podem tornar até as tarefas mais simples difíceis de acompanhar.</p>
+      <p class="text-secondary mt-4 leading-relaxed">O Pulso Utopia nasceu dessa realidade: ajudar pessoas a cuidarem da própria saúde com mais autonomia e oferecer mais tranquilidade para quem cuida de alguém.</p>
+    </div>
+
+    <div class="mt-20 rounded-[28px] border border-white/10 bg-gradient-to-br from-[#191514] to-[#09090b] p-8 md:p-10">
+      <div class="text-center max-w-2xl mx-auto">
+        <h3 class="font-heading text-2xl md:text-3xl font-semibold">Menos esquecimentos. Mais tranquilidade.</h3>
+        <p class="text-secondary text-sm mt-3 leading-relaxed">Tenha seus medicamentos, compromissos e tarefas sempre organizados e receba os lembretes no momento certo.</p>
+        <p class="text-zinc-200 text-sm mt-5">Experimente grátis por 14 dias.<br>Depois, continue por apenas <strong class="text-white">R$ 14,99 por mês</strong>, sem fidelidade e com cancelamento a qualquer momento.</p>
+        <div class="mt-7 flex flex-col items-center gap-2">
+          <a href="https://wa.me/5527996941622?text=Ol%C3%A1%21%20Quero%20come%C3%A7ar%20meu%20teste%20gr%C3%A1tis%20do%20Pulso%20Utopia%20assim%20que%20estiver%20dispon%C3%ADvel." target="_blank" rel="noopener noreferrer" class="bg-white text-black rounded-full px-6 py-3 text-sm font-semibold hover:scale-105 transition-transform">Começar meu teste grátis</a>
+          <span class="text-xs text-zinc-500">Em breve na Google Play</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="relative z-20 border-t border-white/5 mt-12">
+    <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex flex-row items-center justify-center md:justify-start gap-4">
+        <img src="icone_utopia.png" alt="Símbolo da Utopia Desenvolvimentos" class="w-12 h-12 rounded-xl object-cover scale-110" width="48" height="48" loading="lazy">
+        <span class="text-xs sm:text-sm text-secondary whitespace-nowrap">© <span id="currentYear"></span> Utopia Desenvolvimentos</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="mailto:utopiadesenvolvimentos@gmail.com" class="text-secondary hover:text-white transition-colors text-sm">E-mail</a>
+        <a href="https://wa.me/5527996941622?text=Ol%C3%A1%21%20Conheci%20a%20Utopia%20pelo%20site." target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-white transition-colors text-sm">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuButton.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('is-open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      mobileMenu.classList.remove('is-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

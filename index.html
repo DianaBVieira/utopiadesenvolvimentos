@@ -252,6 +252,9 @@
       0%, 100% { opacity: 0.35; box-shadow: 0 0 0 rgba(52,211,153,0); }
       50% { opacity: 1; box-shadow: 0 0 18px rgba(52,211,153,0.65); }
     }
+    .phone-shot-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(30px) brightness(.5) saturate(1.15); transform: scale(1.2); }
+    .project-preview .project-image.phone-shot-fg { position: absolute; top: 50%; left: 50%; width: auto; height: 84%; max-width: 72%; object-fit: contain; transform: translate(-50%, -50%); border-radius: 1.1rem; box-shadow: 0 20px 50px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.08); z-index: 1; }
+    .project-card:hover .project-image.phone-shot-fg { transform: translate(-50%, -50%) scale(1.035); }
   </style>
 </head>
 <body class="font-body selection:bg-white/10">
@@ -461,9 +464,9 @@
         <article class="project-card glass-card overflow-hidden">
           <div class="project-preview carousel" data-carousel>
             <ul class="carousel-track" data-track>
-              <li class="carousel-slide"><img src="assets/services/portfolio-01.webp" alt="Conceito de grade de portfólio de projetos" class="project-image" loading="lazy"></li>
-              <li class="carousel-slide"><img src="assets/services/portfolio-02.webp" alt="Conceito de página de estudo de caso" class="project-image" loading="lazy"></li>
-              <li class="carousel-slide"><img src="assets/services/portfolio-03.webp" alt="Conceito de página sobre com habilidades" class="project-image" loading="lazy"></li>
+              <li class="carousel-slide"><img src="assets/services/portfolio-real-sobre.webp" alt="Seção Sobre do portfólio real de Isabela Martins, consultora Mary Kay" class="project-image" loading="lazy"></li>
+              <li class="carousel-slide"><img src="assets/services/portfolio-real-hero.webp" alt="Página inicial do portfólio real de Isabela Martins" class="project-image" loading="lazy"></li>
+              <li class="carousel-slide"><img src="assets/services/portfolio-real-galeria.webp" alt="Galeria de trabalhos do portfólio real de Isabela Martins" class="project-image" loading="lazy"></li>
             </ul>
             <button type="button" class="carousel-arrow carousel-prev" data-prev aria-label="Foto anterior"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg></button>
             <button type="button" class="carousel-arrow carousel-next" data-next aria-label="Próxima foto"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg></button>
@@ -471,10 +474,10 @@
             <span class="project-label">Portfólio</span>
           </div>
           <div class="p-7">
-            <span class="rounded-full px-3 py-1 text-xs border border-amber-300/25 text-amber-200">Exemplo em breve</span>
+            <span class="status-pill rounded-full px-3 py-1 text-xs">Exemplo real disponível</span>
             <h3 class="font-heading text-2xl font-semibold mt-4">Portfólio</h3>
-            <p class="text-secondary text-sm mt-2 leading-relaxed">Vitrines digitais para autônomos e criadores apresentarem seus trabalhos com destaque.</p>
-            <div class="project-actions"><span class="project-link project-link-secondary opacity-70">Exemplo em breve</span></div>
+            <p class="text-secondary text-sm mt-2 leading-relaxed">Seu trabalho merece mais do que uma bio na rede social. Um portfólio profissional passa credibilidade antes mesmo do primeiro contato — página 100% responsiva, com animações suaves e carregamento rápido, para o visitante decidir te contratar sem sair da tela.</p>
+            <div class="project-actions"><a href="projetos/portfolio-mary-kay/index.html" target="_blank" rel="noopener noreferrer" class="project-link project-link-primary">Conheça mais sobre o Portfólio</a><a href="https://wa.me/5527996941622?text=Ol%C3%A1%21%20Quero%20um%20portf%C3%B3lio%20digital%20para%20mim." target="_blank" rel="noopener noreferrer" class="project-link project-link-secondary">Peça um orçamento</a></div>
           </div>
         </article>
         <article class="project-card glass-card overflow-hidden">
@@ -531,7 +534,7 @@
             <span class="status-pill rounded-full px-3 py-1 text-xs">Exemplo real disponível</span>
             <h3 class="font-heading text-2xl font-semibold mt-4">Aplicativos Personalizados</h3>
             <p class="text-secondary text-sm mt-2 leading-relaxed">Sistemas e aplicativos sob medida para automatizar processos e a rotina do seu negócio.</p>
-            <div class="project-actions"><a href="https://dentalflow-432706203107.us-west1.run.app/" target="_blank" rel="noopener noreferrer" class="project-link project-link-primary">Ver resultado real</a></div>
+            <div class="project-actions"><a href="https://dentalflow.ai.studio/" target="_blank" rel="noopener noreferrer" class="project-link project-link-primary">Ver resultado real</a></div>
           </div>
         </article>
       </div>
@@ -547,18 +550,12 @@
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
       <article class="project-card glass-card overflow-hidden">
         <div class="project-preview"><img src="assets/capa-memorial-lili.webp" alt="Capa do Memorial Eterno criado em homenagem a Lili" class="project-image" loading="lazy"><span class="project-label">Homenagem digital real</span></div>
-        <div class="p-7"><span class="status-pill rounded-full px-3 py-1 text-xs">Principal linha de atuação</span><h3 class="font-heading text-2xl font-semibold mt-4">Memorial Eterno</h3><p class="text-secondary text-sm mt-2 leading-relaxed">Histórias, fotografias, mensagens e lembranças reunidas em uma homenagem delicada, acessível pelo QR Code da porcelana.</p><div class="project-actions"><a href="projetos/memorial-eterno/index.html" target="_blank" rel="noopener noreferrer" class="project-link project-link-primary">Ver demonstração</a><a href="memorial-eterno.html#planos-memorial" class="project-link project-link-secondary">Conhecer os planos</a></div></div>
+        <div class="p-7"><span class="status-pill rounded-full px-3 py-1 text-xs">Principal linha de atuação</span><h3 class="font-heading text-2xl font-semibold mt-4">Memorial Eterno</h3><p class="text-secondary text-sm mt-2 leading-relaxed">Histórias, fotografias, mensagens e lembranças reunidas em uma homenagem delicada, acessível pelo QR Code da porcelana.</p><div class="project-actions"><a href="memorial-eterno.html" class="project-link project-link-primary">Conheça mais sobre o Memorial Eterno</a><a href="projetos/memorial-eterno/index.html" target="_blank" rel="noopener noreferrer" class="project-link project-link-secondary">Ver demonstração</a></div></div>
       </article>
       <article class="project-card glass-card overflow-hidden">
-        <div class="project-preview carousel" data-carousel>
-          <ul class="carousel-track" data-track>
-            <li class="carousel-slide"><img src="assets/apps/dentalflow-01.webp" alt="Dashboard do DentalFlow com agenda, pacientes e receita da clínica" class="project-image" loading="lazy"></li>
-            <li class="carousel-slide"><img src="assets/apps/dentalflow-02.webp" alt="Agenda do dia e ocupação semanal no DentalFlow" class="project-image" loading="lazy"></li>
-            <li class="carousel-slide"><img src="assets/apps/dentalflow-03.webp" alt="Ficha e histórico do paciente no DentalFlow" class="project-image" loading="lazy"></li>
-          </ul>
-          <button type="button" class="carousel-arrow carousel-prev" data-prev aria-label="Foto anterior"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg></button>
-          <button type="button" class="carousel-arrow carousel-next" data-next aria-label="Próxima foto"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg></button>
-          <div class="carousel-dots" data-dots></div>
+        <div class="project-preview">
+          <img src="assets/apps/dentalflow-01.webp" alt="" aria-hidden="true" class="phone-shot-bg" loading="lazy">
+          <img src="assets/apps/dentalflow-01.webp" alt="Painel de métricas do DentalFlow com consultas, taxa de confirmação e faturamento" class="project-image phone-shot-fg" loading="lazy">
           <span class="project-label">Gestão para clínicas</span>
         </div>
         <div class="p-7">
@@ -570,43 +567,31 @@
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Prontuário e histórico do paciente</li>
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Financeiro e relatórios em tempo real</li>
           </ul>
-          <div class="project-actions"><a href="https://dentalflow-432706203107.us-west1.run.app/" target="_blank" rel="noopener noreferrer" class="project-link project-link-primary">Acessar DentalFlow</a></div>
+          <div class="project-actions"><a href="dentalflow.html" class="project-link project-link-primary">Conheça mais sobre o DentalFlow</a><a href="https://dentalflow.ai.studio/" target="_blank" rel="noopener noreferrer" class="project-link project-link-secondary">Acessar DentalFlow</a></div>
         </div>
       </article>
       <article class="project-card glass-card overflow-hidden">
-        <div class="project-preview carousel" data-carousel>
-          <ul class="carousel-track" data-track>
-            <li class="carousel-slide"><img src="assets/apps/pulso-utopia-01.webp" alt="Tela inicial do Pulso Utopia com adesão de remédios, hidratação e atalhos" class="project-image" loading="lazy"></li>
-            <li class="carousel-slide"><img src="assets/apps/pulso-utopia-02.webp" alt="Lista de medicamentos com horários e estoque no Pulso Utopia" class="project-image" loading="lazy"></li>
-            <li class="carousel-slide"><img src="assets/apps/pulso-utopia-03.webp" alt="Agenda de compromissos e consultas no Pulso Utopia" class="project-image" loading="lazy"></li>
-          </ul>
-          <button type="button" class="carousel-arrow carousel-prev" data-prev aria-label="Foto anterior"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg></button>
-          <button type="button" class="carousel-arrow carousel-next" data-next aria-label="Próxima foto"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg></button>
-          <div class="carousel-dots" data-dots></div>
+        <div class="project-preview">
+          <img src="assets/apps/pulso-utopia-01.webp" alt="" aria-hidden="true" class="phone-shot-bg" loading="lazy">
+          <img src="assets/apps/pulso-utopia-01.webp" alt="Tela inicial do Pulso Utopia" class="project-image phone-shot-fg" loading="lazy">
           <span class="project-label">Cuidado e rotina de saúde</span>
         </div>
         <div class="p-7">
           <span class="status-pill rounded-full px-3 py-1 text-xs">Projeto publicado</span>
           <h3 class="font-heading text-2xl font-semibold mt-4">Pulso Utopia</h3>
-          <p class="text-secondary text-sm mt-2 leading-relaxed">Um app de rotina de cuidados para idosos, pessoas com fibromialgia e quem cuida delas — remédios, agenda, hidratação e assistente de IA em um só lugar.</p>
+          <p class="text-secondary text-sm mt-2 leading-relaxed">Sua saúde no ritmo certo, todos os dias. Medicamentos, consultas, tarefas e compromissos organizados em um só lugar, com alarmes sonoros e avisos por voz — pensado para idosos, pessoas com condições crônicas e para quem cuida delas.</p>
           <ul class="mt-4 space-y-2 text-sm text-zinc-300">
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Lembretes de remédios com controle de estoque</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Agenda, tarefas e emergência com um toque</li>
-            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Assinatura via Mercado Pago com teste grátis de 30 dias</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Alarmes com som e voz, mesmo com o app fechado</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Medicamentos, consultas e tarefas sincronizados com o Google Agenda</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Teste grátis por 14 dias, depois R$ 14,99/mês, sem fidelidade</li>
           </ul>
-          <div class="project-actions"><span class="project-link project-link-secondary opacity-70">Demonstração em breve</span></div>
+          <div class="project-actions"><a href="pulso-utopia.html" class="project-link project-link-primary">Conheça mais sobre o Pulso Utopia</a><span class="project-link project-link-secondary opacity-70">Em breve na Google Play</span></div>
         </div>
       </article>
       <article class="project-card glass-card overflow-hidden">
-        <div class="project-preview carousel" data-carousel>
-          <ul class="carousel-track" data-track>
-            <li class="carousel-slide"><img src="assets/apps/finance-01.webp" alt="Visão geral de saldo e gastos no app Finance" class="project-image" loading="lazy"></li>
-            <li class="carousel-slide"><img src="assets/apps/finance-02.webp" alt="Metas do mês e categorias de gastos no app Finance" class="project-image" loading="lazy"></li>
-            <li class="carousel-slide"><img src="assets/apps/finance-03.webp" alt="Extrato e fluxo de caixa no app Finance" class="project-image" loading="lazy"></li>
-          </ul>
-          <button type="button" class="carousel-arrow carousel-prev" data-prev aria-label="Foto anterior"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg></button>
-          <button type="button" class="carousel-arrow carousel-next" data-next aria-label="Próxima foto"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg></button>
-          <div class="carousel-dots" data-dots></div>
+        <div class="project-preview">
+          <img src="assets/apps/finance-01.webp" alt="" aria-hidden="true" class="phone-shot-bg" loading="lazy">
+          <img src="assets/apps/finance-01.webp" alt="Visão geral de saldo e gastos no app Finance" class="project-image phone-shot-fg" loading="lazy">
           <span class="project-label">Aplicativo financeiro</span>
         </div>
         <div class="p-7">
@@ -618,19 +603,13 @@
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Metas financeiras com progresso mensal</li>
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>App instalável (PWA), sem loja de aplicativos</li>
           </ul>
-          <div class="project-actions"><span class="project-link project-link-secondary opacity-70">Demonstração em breve</span></div>
+          <div class="project-actions"><a href="finance.html" class="project-link project-link-primary">Conheça mais sobre o Finance</a><span class="project-link project-link-secondary opacity-70">Demonstração em breve</span></div>
         </div>
       </article>
       <article class="project-card glass-card overflow-hidden">
-        <div class="project-preview carousel" data-carousel>
-          <ul class="carousel-track" data-track>
-            <li class="carousel-slide"><img src="assets/apps/academia-01.webp" alt="Tela inicial do app Academia com chamada para novos alunos" class="project-image" loading="lazy"></li>
-            <li class="carousel-slide"><img src="assets/apps/academia-02.webp" alt="Treinos da semana no app Academia" class="project-image" loading="lazy"></li>
-            <li class="carousel-slide"><img src="assets/apps/academia-03.webp" alt="Planos e mensalidades no app Academia" class="project-image" loading="lazy"></li>
-          </ul>
-          <button type="button" class="carousel-arrow carousel-prev" data-prev aria-label="Foto anterior"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg></button>
-          <button type="button" class="carousel-arrow carousel-next" data-next aria-label="Próxima foto"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg></button>
-          <div class="carousel-dots" data-dots></div>
+        <div class="project-preview">
+          <img src="assets/apps/academia-01.webp" alt="" aria-hidden="true" class="phone-shot-bg" loading="lazy">
+          <img src="assets/apps/academia-01.webp" alt="Tela inicial do app Academia com chamada para novos alunos" class="project-image phone-shot-fg" loading="lazy">
           <span class="project-label">Experiência para academias</span>
         </div>
         <div class="p-7">
@@ -642,12 +621,12 @@
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Grade de horários e modalidades</li>
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Primeiro contato facilitado via WhatsApp</li>
           </ul>
-          <div class="project-actions"><span class="project-link project-link-secondary opacity-70">Demonstração em breve</span></div>
+          <div class="project-actions"><a href="sites-academias.html" class="project-link project-link-primary">Conheça mais sobre Sites para Academias</a><span class="project-link project-link-secondary opacity-70">Demonstração em breve</span></div>
         </div>
       </article>
       <article class="project-card glass-card overflow-hidden">
         <div class="project-preview"><img src="assets/identidades-ficticias.webp" alt="Estudos fictícios de logos e identidades visuais" class="project-image" loading="lazy"><span class="project-label">Marca e identidade</span></div>
-        <div class="p-7"><span class="rounded-full px-3 py-1 text-xs border border-white/15 text-zinc-300">Estudos autorais fictícios</span><h3 class="font-heading text-2xl font-semibold mt-4">Logos e Identidades Visuais</h3><p class="text-secondary text-sm mt-2 leading-relaxed">Conceitos de marca com logo, paleta, tipografia e aplicações criados para demonstrar diferentes possibilidades visuais.</p><div class="project-actions"><a href="assets/identidades-ficticias.webp" target="_blank" rel="noopener noreferrer" class="project-link project-link-primary">Abrir galeria</a></div></div>
+        <div class="p-7"><span class="rounded-full px-3 py-1 text-xs border border-white/15 text-zinc-300">Estudos autorais fictícios</span><h3 class="font-heading text-2xl font-semibold mt-4">Logos e Identidades Visuais</h3><p class="text-secondary text-sm mt-2 leading-relaxed">Conceitos de marca com logo, paleta, tipografia e aplicações criados para demonstrar diferentes possibilidades visuais.</p><div class="project-actions"><a href="identidades-visuais.html" class="project-link project-link-primary">Conheça mais sobre Logos e Identidades</a><a href="assets/identidades-ficticias.webp" target="_blank" rel="noopener noreferrer" class="project-link project-link-secondary">Abrir galeria</a></div></div>
       </article>
     </div>
   </section>
