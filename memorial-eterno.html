@@ -321,7 +321,7 @@
           <h3 class="font-heading text-4xl font-semibold mt-4">R$ 599,00</h3>
           <p class="text-secondary text-sm mt-2">Pagamento único · sem mensalidade</p>
           <ul class="mt-7 space-y-4 text-sm text-zinc-200"><li>✓ Site memorial personalizado</li><li>✓ Até 12 fotografias</li><li>✓ Texto de homenagem</li><li>✓ QR Code em porcelana</li><li>✓ Envio da porcelana pelo correio ao endereço informado</li></ul>
-          <a href="https://wa.me/5527996941622?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20plano%20Memorial%20Essencial%20de%20R%24%20599%2C00.%20Gostaria%20de%20confirmar%20prazo%2C%20revis%C3%B5es%2C%20frete%2C%20forma%20de%20pagamento%20e%20detalhes%20da%20placa." target="_blank" rel="noopener noreferrer" class="mt-8 block text-center border border-[#e08070]/60 text-[#f0c4b8] rounded-full px-6 py-3 text-sm font-semibold">Conversar sobre o plano Essencial</a>
+          <button type="button" class="js-buy-btn mt-8 block w-full text-center border border-[#e08070]/60 text-[#f0c4b8] rounded-full px-6 py-3 text-sm font-semibold" data-plano="essencial">Comprar agora</button>
         </article>
         <article class="glass-card p-8 md:p-10 relative border-[#e08070]/50">
           <span class="absolute top-5 right-5 rounded-full px-3 py-1 text-xs bg-[#e08070] text-black font-semibold">Mais completo</span>
@@ -329,7 +329,7 @@
           <h3 class="font-heading text-4xl font-semibold mt-4">R$ 999,00</h3>
           <p class="text-secondary text-sm mt-2">Pagamento único · sem mensalidade</p>
           <ul class="mt-7 space-y-4 text-sm text-zinc-200"><li>✓ Site memorial personalizado</li><li>✓ Até 50 fotografias</li><li>✓ Texto de homenagem</li><li>✓ QR Code em porcelana</li><li>✓ Envio da porcelana pelo correio ao endereço informado</li></ul>
-          <a href="https://wa.me/5527996941622?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20plano%20Memorial%20Legado%20de%20R%24%20999%2C00.%20Gostaria%20de%20confirmar%20prazo%2C%20revis%C3%B5es%2C%20frete%2C%20forma%20de%20pagamento%20e%20detalhes%20da%20placa." target="_blank" rel="noopener noreferrer" class="mt-8 block text-center bg-[#e08070] text-black rounded-full px-6 py-3 text-sm font-semibold">Conversar sobre o plano Legado</a>
+          <button type="button" class="js-buy-btn mt-8 block w-full text-center bg-[#e08070] text-black rounded-full px-6 py-3 text-sm font-semibold" data-plano="legado">Comprar agora</button>
         </article>
       </div>
       <div class="max-w-5xl mx-auto mt-6 p-5 rounded-2xl bg-white/[0.03] border border-white/10 text-xs text-zinc-400 leading-relaxed">
@@ -413,6 +413,150 @@
       </div>
     </div>
   </footer>
+
+  <!-- ============ MODAL DE CHECKOUT (Mercado Pago) ============ -->
+  <div id="checkoutOverlay" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+    <div class="glass-card w-full max-w-lg p-8 md:p-10 max-h-[90vh] overflow-y-auto relative">
+      <button type="button" id="checkoutClose" aria-label="Fechar" class="absolute top-5 right-5 text-zinc-400 hover:text-white text-xl leading-none">&times;</button>
+      <span class="text-[#e8b7a7] text-sm font-medium">Memorial <span id="checkoutPlanoLabel">Essencial</span></span>
+      <h3 class="font-heading text-2xl md:text-3xl font-semibold mt-2">Vamos começar a homenagem</h3>
+      <p class="text-secondary text-sm mt-3 leading-relaxed">Preencha os dados abaixo para gerar o pagamento. Depois, vamos te chamar no WhatsApp para receber as fotos e a história.</p>
+
+      <form id="checkoutForm" class="mt-6 space-y-4">
+        <input type="hidden" id="checkoutPlano" value="essencial">
+
+        <div>
+          <label class="block text-xs uppercase tracking-widest text-zinc-400 mb-1" for="ckNomeHomenageado">Nome do homenageado</label>
+          <input type="text" id="ckNomeHomenageado" required class="w-full rounded-lg bg-white/5 border border-white/15 px-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#e08070]" placeholder="Ex: Maria da Conceição Silva">
+        </div>
+        <div>
+          <label class="block text-xs uppercase tracking-widest text-zinc-400 mb-1" for="ckClienteNome">Seu nome (responsável)</label>
+          <input type="text" id="ckClienteNome" required class="w-full rounded-lg bg-white/5 border border-white/15 px-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#e08070]">
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-zinc-400 mb-1" for="ckEmail">E-mail</label>
+            <input type="email" id="ckEmail" required class="w-full rounded-lg bg-white/5 border border-white/15 px-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#e08070]">
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-zinc-400 mb-1" for="ckWhatsapp">WhatsApp (com DDD)</label>
+            <input type="tel" id="ckWhatsapp" required placeholder="27 99999-9999" class="w-full rounded-lg bg-white/5 border border-white/15 px-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#e08070]">
+          </div>
+        </div>
+
+        <p class="text-xs uppercase tracking-widest text-zinc-400 pt-2 border-t border-white/10">Endereço de entrega da placa</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-zinc-400 mb-1" for="ckCep">CEP</label>
+            <input type="text" id="ckCep" required class="w-full rounded-lg bg-white/5 border border-white/15 px-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#e08070]">
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-zinc-400 mb-1" for="ckUf">Estado (UF)</label>
+            <input type="text" id="ckUf" required maxlength="2" placeholder="ES" class="w-full rounded-lg bg-white/5 border border-white/15 px-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#e08070] uppercase">
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-4">
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-zinc-400 mb-1" for="ckRua">Rua</label>
+            <input type="text" id="ckRua" required class="w-full rounded-lg bg-white/5 border border-white/15 px-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#e08070]">
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-zinc-400 mb-1" for="ckNumero">Número</label>
+            <input type="text" id="ckNumero" required class="w-full sm:w-28 rounded-lg bg-white/5 border border-white/15 px-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#e08070]">
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-zinc-400 mb-1" for="ckComplemento">Complemento (opcional)</label>
+            <input type="text" id="ckComplemento" class="w-full rounded-lg bg-white/5 border border-white/15 px-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#e08070]">
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-zinc-400 mb-1" for="ckBairro">Bairro</label>
+            <input type="text" id="ckBairro" required class="w-full rounded-lg bg-white/5 border border-white/15 px-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#e08070]">
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs uppercase tracking-widest text-zinc-400 mb-1" for="ckCidade">Cidade</label>
+          <input type="text" id="ckCidade" required class="w-full rounded-lg bg-white/5 border border-white/15 px-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#e08070]">
+        </div>
+
+        <p class="text-red-400 text-sm min-h-[1.2em]" id="checkoutError"></p>
+        <button type="submit" id="checkoutSubmit" class="w-full bg-[#e08070] text-black rounded-full px-6 py-3 text-sm font-semibold hover:scale-[1.02] transition-transform">Ir para pagamento</button>
+        <p class="text-xs text-zinc-500 text-center">Você será redirecionado para o ambiente seguro do Mercado Pago.</p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const CHECKOUT_FUNCTION_URL = 'https://createcheckoutpreference-rze6qytqha-uc.a.run.app';
+    const checkoutOverlay = document.getElementById('checkoutOverlay');
+    const checkoutForm = document.getElementById('checkoutForm');
+    const checkoutError = document.getElementById('checkoutError');
+    const checkoutSubmit = document.getElementById('checkoutSubmit');
+    const PLANO_LABELS = { essencial: 'Essencial', legado: 'Legado' };
+
+    document.querySelectorAll('.js-buy-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const plano = btn.getAttribute('data-plano');
+        document.getElementById('checkoutPlano').value = plano;
+        document.getElementById('checkoutPlanoLabel').textContent = PLANO_LABELS[plano] || plano;
+        checkoutError.textContent = '';
+        checkoutOverlay.classList.remove('hidden');
+        checkoutOverlay.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeCheckout() {
+      checkoutOverlay.classList.add('hidden');
+      checkoutOverlay.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('checkoutClose').addEventListener('click', closeCheckout);
+    checkoutOverlay.addEventListener('click', function (e) {
+      if (e.target === checkoutOverlay) closeCheckout();
+    });
+
+    checkoutForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      checkoutError.textContent = '';
+      checkoutSubmit.disabled = true;
+      checkoutSubmit.textContent = 'Gerando pagamento...';
+      try {
+        const payload = {
+          nomeHomenageado: document.getElementById('ckNomeHomenageado').value.trim(),
+          clienteNome: document.getElementById('ckClienteNome').value.trim(),
+          clienteEmail: document.getElementById('ckEmail').value.trim(),
+          clienteWhatsapp: document.getElementById('ckWhatsapp').value.trim(),
+          plano: document.getElementById('checkoutPlano').value,
+          endereco: {
+            cep: document.getElementById('ckCep').value.trim(),
+            rua: document.getElementById('ckRua').value.trim(),
+            numero: document.getElementById('ckNumero').value.trim(),
+            complemento: document.getElementById('ckComplemento').value.trim(),
+            bairro: document.getElementById('ckBairro').value.trim(),
+            cidade: document.getElementById('ckCidade').value.trim(),
+            uf: document.getElementById('ckUf').value.trim()
+          }
+        };
+        const response = await fetch(CHECKOUT_FUNCTION_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const result = await response.json();
+        if (!response.ok) {
+          throw new Error(result.error || 'Não foi possível iniciar o pagamento.');
+        }
+        window.location.href = result.checkoutUrl;
+      } catch (error) {
+        console.error('[checkout] falha:', error);
+        checkoutError.textContent = error.message || 'Não foi possível iniciar o pagamento agora. Tente novamente.';
+        checkoutSubmit.disabled = false;
+        checkoutSubmit.textContent = 'Ir para pagamento';
+      }
+    });
+  </script>
 
   <script>
     const menuButton = document.getElementById('menuButton');
