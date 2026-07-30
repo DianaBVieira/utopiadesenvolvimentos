@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Recordações de Lili — Memorial Eterno</title>
 <meta name="description" content="Memorial eterno em homenagem a Lili, sua história, sua família e as lembranças de quem a ama.">
 
@@ -961,7 +962,7 @@ body.adm-editing .welcome-overlay .adm-hero-upload{
   <div class="gallery-video-wrap reveal-target">
     <div class="gallery-video-label"><span data-key="gal-video-label">Em Memória</span></div>
     <div class="gallery-video-frame" id="galleryVideoFrame">
-      <iframe width="795" height="447" src="https://www.youtube.com/embed/KgN3Oqmhxuc" title="Saudades Mãezinha" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe width="795" height="447" src="https://www.youtube.com/embed/KgN3Oqmhxuc?origin=https%3A%2F%2Fwww.utopiadesenvolvimentos.com.br" title="Saudades Mãezinha" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       <div class="gallery-video-placeholder" id="galleryVideoPlaceholder" style="display:none;"></div>
     </div>
   </div>
@@ -2076,7 +2077,7 @@ body.adm-editing .welcome-overlay .adm-hero-upload{
     if(vid){
       if(placeholder) placeholder.style.display = 'none';
       var iframe = existing || document.createElement('iframe');
-      iframe.src = 'https://www.youtube.com/embed/' + vid;
+      iframe.src = 'https://www.youtube.com/embed/' + vid + '?origin=https%3A%2F%2Fwww.utopiadesenvolvimentos.com.br';
       iframe.setAttribute('width','795');
       iframe.setAttribute('height','447');
       iframe.setAttribute('frameborder','0');
