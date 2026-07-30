@@ -1,0 +1,37 @@
+User-agent: *
+Allow: /
+
+# Motores de resposta por IA (ChatGPT, Perplexity, Claude, Google AI Overviews) —
+# liberados de propósito para que a Utopia Desenvolvimentos seja encontrada e
+# citada quando alguém pergunta a uma IA sobre sites, apps ou o Memorial Eterno.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://www.utopiadesenvolvimentos.com.br/sitemap.xml

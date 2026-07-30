@@ -1,0 +1,26 @@
+# Utopia Desenvolvimentos
+
+> Estúdio digital brasileiro que cria identidade visual, sites, aplicativos e automações com inteligência artificial para transformar ideias em negócios digitais. Atendimento em português, remoto, via WhatsApp, para todo o Brasil.
+
+A Utopia Desenvolvimentos oferece: criação de logotipos e identidade visual, desenvolvimento de sites institucionais e aplicativos sob medida, automação de atendimento por IA no WhatsApp, e o Memorial Eterno — uma homenagem digital póstuma com QR Code em porcelana que leva a uma página de memórias da pessoa falecida.
+
+## Serviços e páginas
+
+- [Página inicial](https://www.utopiadesenvolvimentos.com.br/): visão geral de todos os serviços, planos e perguntas frequentes.
+- [Memorial Eterno](https://www.utopiadesenvolvimentos.com.br/memorial-eterno.html): homenagem digital com QR Code em porcelana para quem perdeu alguém querido.
+- [Pulso Utopia](https://www.utopiadesenvolvimentos.com.br/pulso-utopia.html): aplicativo de rotina de saúde, lembretes de medicamentos, consultas e tarefas para idosos e pessoas com condições crônicas.
+- [DentalFlow](https://www.utopiadesenvolvimentos.com.br/dentalflow.html): sistema de gestão para clínicas odontológicas.
+- [Sites para academias](https://www.utopiadesenvolvimentos.com.br/sites-academias.html): sites institucionais voltados para academias e estúdios fitness.
+- [Identidades visuais](https://www.utopiadesenvolvimentos.com.br/identidades-visuais.html): criação de logotipos e sistemas de identidade visual.
+- [Portfólio completo](https://www.utopiadesenvolvimentos.com.br/portfolio.html): todos os projetos entregues.
+
+## Planos (a partir de)
+
+- Essencial: R$ 1.490,00 — logotipo profissional + site institucional de até 3 páginas.
+- Profissional: R$ 3.490,00 — identidade visual completa + site responsivo + suporte prioritário.
+- Enterprise: sob consulta — software customizado, IA dedicada, consultoria estratégica.
+
+## Contato
+
+- WhatsApp: +55 27 99694-1622
+- E-mail: utopiadesenvolvimentos@gmail.com
