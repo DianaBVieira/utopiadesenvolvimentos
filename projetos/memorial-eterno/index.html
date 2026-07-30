@@ -1000,7 +1000,7 @@ body.adm-editing .welcome-overlay .adm-hero-upload{
       <button type="submit" class="btn">Enviar Mensagem</button>
       <div class="form-success" id="formSuccess" role="status" aria-live="polite"></div>
     </form>
-    <div class="mural reveal-target" id="mural" aria-label="Mural de mensagens">
+    <div class="mural" id="mural" aria-label="Mural de mensagens">
       <article class="msg-card">
         <div class="msg-avatar">D</div>
         <div class="msg-body"><div class="msg-head"><h4>Diana Vieira · filha</h4></div><p>Minha mãe foi repentinamente, uma dor que eu ainda não havia presenciado. Acredito que o tempo não ameniza, apenas nos acostumamos com ela. Sua história foi difícil e ela superou todos os obstáculos que a vida colocou em seu caminho. Por isso, é o meu maior exemplo de superação.</p></div>
@@ -1950,10 +1950,24 @@ body.adm-editing .welcome-overlay .adm-hero-upload{
     });
   }
 
+  function messageSignature(name, text){
+    return String(name).trim().toLowerCase() + '\n' + String(text).trim().toLowerCase();
+  }
+
   function loadApprovedMessagesIntoMural(){
     document.querySelectorAll('[data-community-message="true"]').forEach(function(card){ card.remove(); });
+    const displayedMessages = new Set();
+    document.querySelectorAll('#mural .msg-card').forEach(function(card){
+      const name = card.querySelector('h4');
+      const text = card.querySelector('p');
+      if(name && text) displayedMessages.add(messageSignature(name.textContent, text.textContent));
+    });
     getApproved().forEach(function(msg){
-      if(window.EternalMemory) window.EternalMemory.addMessage(msg.name, msg.text, msg.date, msg.id);
+      const signature = messageSignature(msg.name, msg.text);
+      if(!displayedMessages.has(signature) && window.EternalMemory){
+        displayedMessages.add(signature);
+        window.EternalMemory.addMessage(msg.name, msg.text, msg.date, msg.id);
+      }
     });
   }
 
