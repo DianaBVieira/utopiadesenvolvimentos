@@ -1697,7 +1697,12 @@ body.adm-editing .welcome-overlay .adm-hero-upload{
         else node.textContent = content[key];
       }
     });
-    const heroImg = readLS(LS_KEYS.heroImg, null);
+    let heroImg = readLS(LS_KEYS.heroImg, null);
+    // A capa antiga continua registrada no Firebase. Substituímos apenas esse
+    // arquivo legado pela nova composição; futuros uploads do painel continuam válidos.
+    if(heroImg && heroImg.indexOf('1785252560012-capa-lili.png') !== -1){
+      heroImg = 'assets/capa-lili-v3.png';
+    }
     if(heroImg){
       const hero = document.querySelector('.hero');
       if(hero) hero.style.setProperty('--custom-hero-bg', 'url(' + heroImg + ')');
