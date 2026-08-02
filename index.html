@@ -279,9 +279,13 @@
     @media (prefers-reduced-motion: reduce) {
       .coverflow-card { transition: none; }
     }
-    .gradient-text { background-image: linear-gradient(120deg, #34d399 0%, #7c3aed 50%, #34d399 100%); background-size: 220% auto; background-position: 0% 50%; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; display: inline-block; animation: gradientSweep 6s ease-in-out infinite alternate; }
+    .gradient-text { background-image: linear-gradient(120deg, #34d399 0%, #ffffff 50%, #34d399 100%); background-size: 220% auto; background-position: 0% 50%; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; display: inline-block; animation: gradientSweep 6s ease-in-out infinite alternate; }
     @keyframes gradientSweep { 0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
     @media (prefers-reduced-motion: reduce) { .gradient-text { animation: none; background-position: 30% 50%; } }
+    .btn-green-3d { position: relative; display: inline-flex; align-items: center; justify-content: center; padding: 9px 20px; border-radius: 999px; font-weight: 600; font-size: .8rem; color: #06301f; background: #34d399; box-shadow: 0 3px 0 rgba(6,40,26,.6), 0 10px 18px -6px rgba(52,211,153,.55); transition: transform .15s ease, box-shadow .15s ease; transform: translateY(0); white-space: nowrap; }
+    .btn-green-3d::before { content: ""; position: absolute; inset: 1px 1px auto 1px; height: 46%; border-radius: 999px 999px 100% 100% / 999px 999px 100% 100%; background: linear-gradient(180deg, rgba(255,255,255,.45), rgba(255,255,255,0)); pointer-events: none; }
+    .btn-green-3d:hover { transform: translateY(-2px); box-shadow: 0 5px 0 rgba(6,40,26,.6), 0 14px 22px -6px rgba(52,211,153,.6); }
+    .btn-green-3d:active { transform: translateY(2px); box-shadow: 0 1px 0 rgba(6,40,26,.6), 0 4px 10px -4px rgba(52,211,153,.4); }
   </style>
 </head>
 <body class="font-body selection:bg-white/10">
@@ -467,29 +471,29 @@
 
       <div class="flex flex-wrap justify-center gap-5 mt-16">
         <div class="glass-card p-5 flex flex-col w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.835rem)]">
-          <h3 class="font-heading text-base font-semibold"><span class="gradient-text">Sites</span></h3>
-          <p class="text-secondary text-xs mt-2 flex-1">Sites institucionais rápidos e responsivos, pensados para transformar visitantes em clientes.</p>
-          <a href="#servico-sites" class="mt-4 inline-block text-center border border-white/20 rounded-full px-3 py-1.5 text-xs font-medium hover:bg-white/5 transition-colors">Acesse para saber mais</a>
+          <h3 class="font-heading text-xl font-semibold text-center"><span class="gradient-text">Sites</span></h3>
+          <p class="text-secondary text-sm mt-2 flex-1 text-justify">Sites institucionais rápidos e responsivos, pensados para transformar visitantes em clientes.</p>
+          <a href="#servico-sites" class="btn-green-3d mt-4 self-center">Acesse para saber mais</a>
         </div>
         <div class="glass-card p-5 flex flex-col w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.835rem)]">
-          <h3 class="font-heading text-base font-semibold"><span class="gradient-text">Portfólio</span></h3>
-          <p class="text-secondary text-xs mt-2 flex-1">Um portfólio profissional que passa credibilidade antes mesmo do primeiro contato.</p>
-          <a href="#servico-portfolio" class="mt-4 inline-block text-center border border-white/20 rounded-full px-3 py-1.5 text-xs font-medium hover:bg-white/5 transition-colors">Acesse para saber mais</a>
+          <h3 class="font-heading text-xl font-semibold text-center"><span class="gradient-text">Portfólio</span></h3>
+          <p class="text-secondary text-sm mt-2 flex-1 text-justify">Um portfólio profissional que passa credibilidade antes mesmo do primeiro contato.</p>
+          <a href="#servico-portfolio" class="btn-green-3d mt-4 self-center">Acesse para saber mais</a>
         </div>
         <div class="glass-card p-5 flex flex-col w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.835rem)]">
-          <h3 class="font-heading text-base font-semibold"><span class="gradient-text">Landing Pages</span></h3>
-          <p class="text-secondary text-xs mt-2 flex-1">Páginas de conversão focadas em captar leads ou vender um produto específico.</p>
-          <a href="#servico-landing" class="mt-4 inline-block text-center border border-white/20 rounded-full px-3 py-1.5 text-xs font-medium hover:bg-white/5 transition-colors">Acesse para saber mais</a>
+          <h3 class="font-heading text-xl font-semibold text-center"><span class="gradient-text">Landing Pages</span></h3>
+          <p class="text-secondary text-sm mt-2 flex-1 text-justify">Páginas de conversão focadas em captar leads ou vender um produto específico.</p>
+          <a href="#servico-landing" class="btn-green-3d mt-4 self-center">Acesse para saber mais</a>
         </div>
         <div class="glass-card p-5 flex flex-col w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.835rem)]">
-          <h3 class="font-heading text-base font-semibold"><span class="gradient-text">Aplicativos</span></h3>
-          <p class="text-secondary text-xs mt-2 flex-1">Sistemas e aplicativos sob medida para automatizar a rotina do seu negócio.</p>
-          <a href="#servico-apps" class="mt-4 inline-block text-center border border-white/20 rounded-full px-3 py-1.5 text-xs font-medium hover:bg-white/5 transition-colors">Acesse para saber mais</a>
+          <h3 class="font-heading text-xl font-semibold text-center"><span class="gradient-text">Aplicativos</span></h3>
+          <p class="text-secondary text-sm mt-2 flex-1 text-justify">Sistemas e aplicativos sob medida para automatizar a rotina do seu negócio.</p>
+          <a href="#servico-apps" class="btn-green-3d mt-4 self-center">Acesse para saber mais</a>
         </div>
         <div class="glass-card p-5 flex flex-col w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.835rem)]">
-          <h3 class="font-heading text-base font-semibold"><span class="gradient-text">Logos</span></h3>
-          <p class="text-secondary text-xs mt-2 flex-1">Identidade visual única, com estudo de conceito, paleta de cores e aplicações da marca.</p>
-          <a href="#servico-logos" class="mt-4 inline-block text-center border border-white/20 rounded-full px-3 py-1.5 text-xs font-medium hover:bg-white/5 transition-colors">Acesse para saber mais</a>
+          <h3 class="font-heading text-xl font-semibold text-center"><span class="gradient-text">Logos</span></h3>
+          <p class="text-secondary text-sm mt-2 flex-1 text-justify">Identidade visual única, com estudo de conceito, paleta de cores e aplicações da marca.</p>
+          <a href="#servico-logos" class="btn-green-3d mt-4 self-center">Acesse para saber mais</a>
         </div>
       </div>
 
