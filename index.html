@@ -255,10 +255,10 @@
     .phone-shot-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(30px) brightness(.5) saturate(1.15); transform: scale(1.2); }
     .project-preview .project-image.phone-shot-fg { position: absolute; top: 50%; left: 50%; width: auto; height: 84%; max-width: 72%; object-fit: contain; transform: translate(-50%, -50%); border-radius: 1.1rem; box-shadow: 0 20px 50px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.08); z-index: 1; }
     .project-card:hover .project-image.phone-shot-fg { transform: translate(-50%, -50%) scale(1.035); }
-    .coverflow-wrap { position: relative; margin: 8px 0 56px; }
+    .coverflow-wrap { position: relative; margin: 24px 0 56px; }
     .coverflow-stage { position: relative; height: 360px; perspective: 1700px; display: flex; align-items: center; justify-content: center; }
     .coverflow-track { position: relative; width: 100%; height: 100%; list-style: none; margin: 0; padding: 0; transform-style: preserve-3d; }
-    .coverflow-card { position: absolute; left: 50%; top: 50%; width: 460px; height: 306px; margin: -153px 0 0 -230px; border-radius: 22px; overflow: hidden; cursor: pointer; transform-style: preserve-3d; box-shadow: 0 30px 70px -18px rgba(0,0,0,.75), 0 0 0 1px rgba(255,255,255,.06); transition: transform .65s cubic-bezier(.22,1,.36,1), opacity .65s cubic-bezier(.22,1,.36,1); background: #111; }
+    .coverflow-card { position: absolute; inset: 0; margin: auto; width: 460px; height: 306px; border-radius: 22px; overflow: hidden; cursor: pointer; transform-style: preserve-3d; box-shadow: 0 30px 70px -18px rgba(0,0,0,.75), 0 0 0 1px rgba(255,255,255,.06); transition: transform .65s cubic-bezier(.22,1,.36,1), opacity .65s cubic-bezier(.22,1,.36,1); background: #111; }
     .coverflow-card img { width: 100%; height: 100%; object-fit: cover; display: block; user-select: none; -webkit-user-drag: none; }
     .coverflow-card::after { content: ""; position: absolute; inset: 0; background: #000; opacity: .5; transition: opacity .65s ease; pointer-events: none; }
     .coverflow-card.is-active::after { opacity: 0; }
@@ -272,7 +272,7 @@
     .coverflow-dot[aria-selected="true"] { background: #34d399; width: 1.3rem; }
     @media (max-width: 900px) {
       .coverflow-stage { height: 260px; }
-      .coverflow-card { width: 300px; height: 210px; margin: -105px 0 0 -150px; }
+      .coverflow-card { width: 300px; height: 210px; }
       .coverflow-prev { left: -6px; }
       .coverflow-next { right: -6px; }
     }
@@ -915,7 +915,7 @@
           const tz = -ax * DEPTH;
           const ry = -rel * TILT;
           const rz = rel * SIDE_TILT;
-          card.style.transform = `translate(-50%, -50%) translateX(${tx}px) translateZ(${tz}px) rotateY(${ry}deg) rotateZ(${rz}deg) scale(${scale})`;
+          card.style.transform = `translateX(${tx}px) translateZ(${tz}px) rotateY(${ry}deg) rotateZ(${rz}deg) scale(${scale})`;
           card.style.opacity = visible ? '1' : '0';
           card.style.zIndex = String(100 - ax);
           card.style.pointerEvents = visible ? 'auto' : 'none';
