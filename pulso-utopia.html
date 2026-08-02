@@ -80,6 +80,19 @@
     .device-frame-phone .device-frame-notch span { width: 2.5rem; height: .3rem; border-radius: 999px; background: #000; }
     .device-frame-phone img { display: block; width: 100%; height: auto; }
     .status-pill { background: rgba(52,211,153,.1); border: 1px solid rgba(52,211,153,.3); color: #6ee7b7; }
+    .hero-cover { position: relative; min-height: 420px; background-image: url('assets/apps/capa-pulso-utopia-hero.png'); background-size: cover; background-position: center right; background-repeat: no-repeat; }
+    .hero-cover-overlay { position: absolute; inset: 0; z-index: 2; background: linear-gradient(90deg, rgba(9,9,11,.99) 0%, rgba(9,9,11,.96) 46%, rgba(9,9,11,.7) 68%, rgba(9,9,11,.15) 92%, rgba(9,9,11,0) 100%), linear-gradient(180deg, rgba(9,9,11,0) 70%, rgba(9,9,11,1) 100%); }
+    @media (min-width: 768px) { .hero-cover { min-height: 480px; } }
+    @media (max-width: 767px) { .hero-cover { background-position: 82% center; min-height: 560px; } .hero-cover-overlay { background: linear-gradient(180deg, rgba(9,9,11,.92) 0%, rgba(9,9,11,.96) 30%, rgba(9,9,11,.99) 55%, rgba(9,9,11,1) 80%); } }
+    .hero-rays { position: absolute; inset: 0; overflow: hidden; pointer-events: none; display: flex; justify-content: center; z-index: 3; }
+    .hero-rays .ray-core, .hero-rays .ray { position: absolute; }
+    .gradient-text { background-image: linear-gradient(120deg, #34d399 0%, #7c3aed 50%, #34d399 100%); background-size: 220% auto; background-position: 0% 50%; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; display: inline-block; animation: gradientSweep 6s ease-in-out infinite alternate; }
+    @keyframes gradientSweep { 0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
+    @media (prefers-reduced-motion: reduce) { .gradient-text { animation: none; background-position: 30% 50%; } }
+    .btn-gradient-3d { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: 14px 34px; border-radius: 999px; font-weight: 600; font-size: .95rem; color: #fff; background: linear-gradient(120deg, #34d399 0%, #7c3aed 100%); box-shadow: 0 4px 0 rgba(6,40,26,.6), 0 14px 28px -8px rgba(124,58,237,.55); transition: transform .15s ease, box-shadow .15s ease; transform: translateY(0); }
+    .btn-gradient-3d::before { content: ""; position: absolute; inset: 2px 2px auto 2px; height: 46%; border-radius: 999px 999px 100% 100% / 999px 999px 100% 100%; background: linear-gradient(180deg, rgba(255,255,255,.4), rgba(255,255,255,0)); pointer-events: none; }
+    .btn-gradient-3d:hover { transform: translateY(-2px); box-shadow: 0 6px 0 rgba(6,40,26,.6), 0 18px 32px -8px rgba(124,58,237,.65); }
+    .btn-gradient-3d:active { transform: translateY(3px); box-shadow: 0 1px 0 rgba(6,40,26,.6), 0 6px 14px -6px rgba(124,58,237,.45); }
   </style>
 </head>
 <body class="font-body selection:bg-white/10">
@@ -127,24 +140,30 @@
     </div>
   </nav>
 
-  <main class="relative z-20 max-w-7xl mx-auto px-6 pt-24 md:pt-32">
-    <a href="index.html#projetos" class="inline-flex items-center gap-2 text-sm text-secondary hover:text-white transition-colors">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
-      Voltar para Projetos
-    </a>
-  </main>
-
-  <section class="relative z-20 max-w-7xl mx-auto px-6 pt-6 pb-24">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      <div class="fade-in">
-        <span class="status-pill inline-block rounded-full px-3 py-1 text-xs">Projeto publicado</span>
-        <h1 class="font-heading text-4xl md:text-6xl font-semibold tracking-[-0.03em] mt-4 leading-[1.05]">
-          Sua rotina de saúde.<br>
-          <span class="bg-gradient-to-r from-accent to-emerald-300 text-transparent bg-clip-text">Sob controle.</span>
-        </h1>
-        <p class="text-2xl text-zinc-100 mt-5 leading-relaxed font-medium">Medicamentos, consultas e tarefas — tudo em um só lugar.</p>
-        <p class="text-secondary mt-4 leading-relaxed">Com alarmes sonoros e avisos por voz para que nada importante seja esquecido. Criado especialmente para idosos, pessoas com condições crônicas e para quem cuida delas.</p>
-        <div class="mt-8 flex flex-wrap items-center gap-4">
+  <header class="relative z-20 max-w-7xl mx-auto px-6 pt-4 md:pt-6">
+    <div class="hero-cover relative rounded-3xl overflow-hidden">
+      <div class="hero-rays" aria-hidden="true">
+        <div class="ray-core"></div>
+        <div class="ray ray-1"></div>
+        <div class="ray ray-2"></div>
+        <div class="ray ray-3"></div>
+        <div class="ray ray-4"></div>
+        <div class="ray ray-5"></div>
+        <div class="ray ray-6"></div>
+        <div class="ray ray-7"></div>
+      </div>
+      <div class="hero-cover-overlay"></div>
+      <div class="relative z-10 max-w-2xl fade-in px-6 md:px-10 pt-24 pb-8 md:pt-28 md:pb-12">
+        <a href="index.html#projetos" class="inline-flex items-center gap-2 text-sm text-secondary hover:text-white transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+          Voltar para Projetos
+        </a>
+        <span class="status-pill inline-block rounded-full px-3 py-1 text-xs mt-6">Projeto publicado</span>
+        <h1 class="font-heading text-4xl md:text-6xl font-semibold tracking-[-0.03em] mt-3"><span class="gradient-text">Pulso Utopia</span></h1>
+        <p class="text-xl md:text-2xl text-zinc-100 mt-3 leading-snug font-medium">Sua saúde no ritmo certo, todos os dias.</p>
+        <p class="text-secondary text-sm md:text-base mt-3 leading-relaxed">O Pulso Utopia ajuda você a organizar medicamentos, consultas, tarefas e compromissos em um só lugar. Com alarmes sonoros e avisos por voz para que nada importante seja esquecido.</p>
+        <p class="text-secondary text-sm md:text-base mt-2 leading-relaxed">Criado especialmente para idosos, pessoas com doenças crônicas, pessoas em tratamentos temporários e familiares ou cuidadores que desejam acompanhar a rotina de saúde com mais tranquilidade.</p>
+        <div class="mt-6 flex flex-wrap items-center gap-4">
           <a href="downloads/pulso-utopia.apk" download class="bg-white text-black rounded-full px-6 py-3 text-sm font-semibold hover:scale-105 transition-transform inline-flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" /></svg>
             Baixar para Android
@@ -152,26 +171,17 @@
           <a href="#como-instalar" class="text-xs text-zinc-500 underline hover:text-white transition-colors">Ainda não está na Google Play — veja como instalar com segurança</a>
         </div>
       </div>
-
-      <div class="relative h-[420px] md:h-[520px] flex items-center justify-center">
-        <figure class="device-frame-phone absolute" style="width: 190px; max-width: none; margin: 0; left: 4%; bottom: 2%; transform: rotate(-7deg); z-index: 20;">
-          <div class="device-frame-notch"><span></span></div>
-          <img src="assets/apps/pulso-utopia-02.webp" alt="Lista de medicamentos cadastrados no Pulso Utopia">
-        </figure>
-        <figure class="device-frame-phone absolute" style="width: 210px; max-width: none; margin: 0; right: 2%; top: 4%; transform: rotate(6deg); z-index: 30;">
-          <div class="device-frame-notch"><span></span></div>
-          <img src="assets/apps/pulso-utopia-01.webp" alt="Tela inicial do Pulso Utopia com adesão de medicamentos do dia">
-        </figure>
-      </div>
     </div>
+  </header>
 
+  <section class="relative z-20 max-w-7xl mx-auto px-6 pt-6 pb-24">
     <div class="max-w-3xl mt-16">
-      <h2 class="font-heading text-3xl font-semibold">Mais segurança para quem toma medicamentos</h2>
+      <h2 class="font-heading text-3xl font-semibold"><span class="gradient-text">Mais segurança para quem toma medicamentos</span></h2>
       <p class="text-secondary mt-4 leading-relaxed">Registre os horários dos remédios e receba alarmes com som e voz, mesmo quando o aplicativo estiver fechado. Assim, fica mais fácil saber o que precisa ser tomado e evitar aquela dúvida: "Será que eu já tomei meu remédio hoje?"</p>
     </div>
 
     <div class="mt-16">
-      <h2 class="font-heading text-3xl font-semibold text-center">Tudo organizado em um só lugar</h2>
+      <h2 class="font-heading text-3xl font-semibold text-center"><span class="gradient-text">Tudo organizado em um só lugar</span></h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 max-w-3xl mx-auto">
         <div class="glass-card p-5 text-sm text-zinc-200 flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Alarmes personalizados para cada medicamento</div>
         <div class="glass-card p-5 text-sm text-zinc-200 flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Avisos sonoros e falados</div>
@@ -187,7 +197,7 @@
     <div class="mt-20">
       <div class="text-center max-w-2xl mx-auto">
         <span class="text-accent text-sm font-medium">Por dentro do app</span>
-        <h2 class="font-heading text-3xl md:text-4xl font-semibold mt-2">Telas pensadas para o dia a dia</h2>
+        <h2 class="font-heading text-3xl md:text-4xl font-semibold mt-2"><span class="gradient-text">Telas pensadas para o dia a dia</span></h2>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-10 items-start">
         <figure class="device-frame-phone">
@@ -218,7 +228,7 @@
     <div id="como-instalar" class="mt-20 max-w-3xl mx-auto scroll-mt-24">
       <div class="text-center max-w-2xl mx-auto">
         <span class="text-accent text-sm font-medium">Antes de instalar</span>
-        <h2 class="font-heading text-3xl font-semibold mt-2">Como baixar e instalar com segurança</h2>
+        <h2 class="font-heading text-3xl font-semibold mt-2"><span class="gradient-text">Como baixar e instalar com segurança</span></h2>
         <p class="text-secondary mt-4 leading-relaxed">O Pulso Utopia ainda não está na Google Play (estamos no processo de aprovação). Por isso, o app é baixado direto pelo nosso site, como um arquivo <strong class="text-white">.apk</strong>. Veja o passo a passo:</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
@@ -238,7 +248,7 @@
         <p class="text-secondary text-sm mt-3 leading-relaxed">Tenha seus medicamentos, compromissos e tarefas sempre organizados e receba os lembretes no momento certo.</p>
         <p class="text-zinc-200 text-sm mt-5">Experimente grátis por 14 dias.<br>Depois, continue por apenas <strong class="text-white">R$ 14,99 por mês</strong>, sem fidelidade e com cancelamento a qualquer momento.</p>
         <div class="mt-7 flex flex-col items-center gap-2">
-          <a href="downloads/pulso-utopia.apk" download class="bg-white text-black rounded-full px-6 py-3 text-sm font-semibold hover:scale-105 transition-transform">Começar meu teste grátis</a>
+          <a href="downloads/pulso-utopia.apk" download class="btn-gradient-3d">Começar meu teste grátis</a>
           <a href="#como-instalar" class="text-xs text-zinc-500 underline hover:text-white transition-colors">Ainda não está na Google Play — veja como instalar com segurança</a>
         </div>
       </div>
