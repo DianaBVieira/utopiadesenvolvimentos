@@ -279,6 +279,9 @@
     @media (prefers-reduced-motion: reduce) {
       .coverflow-card { transition: none; }
     }
+    .gradient-text { background-image: linear-gradient(120deg, #34d399 0%, #7c3aed 50%, #34d399 100%); background-size: 220% auto; background-position: 0% 50%; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; display: inline-block; animation: gradientSweep 6s ease-in-out infinite alternate; }
+    @keyframes gradientSweep { 0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
+    @media (prefers-reduced-motion: reduce) { .gradient-text { animation: none; background-position: 30% 50%; } }
   </style>
 </head>
 <body class="font-body selection:bg-white/10">
@@ -462,31 +465,31 @@
         <div class="coverflow-dots" data-coverflow-dots></div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mt-16">
-        <div class="glass-card p-6 flex flex-col">
-          <h3 class="font-heading text-lg font-semibold">Sites</h3>
-          <p class="text-secondary text-sm mt-2 flex-1">Sites institucionais rápidos e responsivos, pensados para transformar visitantes em clientes.</p>
-          <a href="#servico-sites" class="mt-5 inline-block text-center border border-white/20 rounded-full px-4 py-2 text-xs font-medium hover:bg-white/5 transition-colors">Acesse para saber mais</a>
+      <div class="flex flex-wrap justify-center gap-5 mt-16">
+        <div class="glass-card p-5 flex flex-col w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.835rem)]">
+          <h3 class="font-heading text-base font-semibold"><span class="gradient-text">Sites</span></h3>
+          <p class="text-secondary text-xs mt-2 flex-1">Sites institucionais rápidos e responsivos, pensados para transformar visitantes em clientes.</p>
+          <a href="#servico-sites" class="mt-4 inline-block text-center border border-white/20 rounded-full px-3 py-1.5 text-xs font-medium hover:bg-white/5 transition-colors">Acesse para saber mais</a>
         </div>
-        <div class="glass-card p-6 flex flex-col">
-          <h3 class="font-heading text-lg font-semibold">Portfólio</h3>
-          <p class="text-secondary text-sm mt-2 flex-1">Um portfólio profissional que passa credibilidade antes mesmo do primeiro contato.</p>
-          <a href="#servico-portfolio" class="mt-5 inline-block text-center border border-white/20 rounded-full px-4 py-2 text-xs font-medium hover:bg-white/5 transition-colors">Acesse para saber mais</a>
+        <div class="glass-card p-5 flex flex-col w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.835rem)]">
+          <h3 class="font-heading text-base font-semibold"><span class="gradient-text">Portfólio</span></h3>
+          <p class="text-secondary text-xs mt-2 flex-1">Um portfólio profissional que passa credibilidade antes mesmo do primeiro contato.</p>
+          <a href="#servico-portfolio" class="mt-4 inline-block text-center border border-white/20 rounded-full px-3 py-1.5 text-xs font-medium hover:bg-white/5 transition-colors">Acesse para saber mais</a>
         </div>
-        <div class="glass-card p-6 flex flex-col">
-          <h3 class="font-heading text-lg font-semibold">Landing Pages</h3>
-          <p class="text-secondary text-sm mt-2 flex-1">Páginas de conversão focadas em captar leads ou vender um produto específico.</p>
-          <a href="#servico-landing" class="mt-5 inline-block text-center border border-white/20 rounded-full px-4 py-2 text-xs font-medium hover:bg-white/5 transition-colors">Acesse para saber mais</a>
+        <div class="glass-card p-5 flex flex-col w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.835rem)]">
+          <h3 class="font-heading text-base font-semibold"><span class="gradient-text">Landing Pages</span></h3>
+          <p class="text-secondary text-xs mt-2 flex-1">Páginas de conversão focadas em captar leads ou vender um produto específico.</p>
+          <a href="#servico-landing" class="mt-4 inline-block text-center border border-white/20 rounded-full px-3 py-1.5 text-xs font-medium hover:bg-white/5 transition-colors">Acesse para saber mais</a>
         </div>
-        <div class="glass-card p-6 flex flex-col">
-          <h3 class="font-heading text-lg font-semibold">Aplicativos</h3>
-          <p class="text-secondary text-sm mt-2 flex-1">Sistemas e aplicativos sob medida para automatizar a rotina do seu negócio.</p>
-          <a href="#servico-apps" class="mt-5 inline-block text-center border border-white/20 rounded-full px-4 py-2 text-xs font-medium hover:bg-white/5 transition-colors">Acesse para saber mais</a>
+        <div class="glass-card p-5 flex flex-col w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.835rem)]">
+          <h3 class="font-heading text-base font-semibold"><span class="gradient-text">Aplicativos</span></h3>
+          <p class="text-secondary text-xs mt-2 flex-1">Sistemas e aplicativos sob medida para automatizar a rotina do seu negócio.</p>
+          <a href="#servico-apps" class="mt-4 inline-block text-center border border-white/20 rounded-full px-3 py-1.5 text-xs font-medium hover:bg-white/5 transition-colors">Acesse para saber mais</a>
         </div>
-        <div class="glass-card p-6 flex flex-col">
-          <h3 class="font-heading text-lg font-semibold">Logos</h3>
-          <p class="text-secondary text-sm mt-2 flex-1">Identidade visual única, com estudo de conceito, paleta de cores e aplicações da marca.</p>
-          <a href="#servico-logos" class="mt-5 inline-block text-center border border-white/20 rounded-full px-4 py-2 text-xs font-medium hover:bg-white/5 transition-colors">Acesse para saber mais</a>
+        <div class="glass-card p-5 flex flex-col w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.835rem)]">
+          <h3 class="font-heading text-base font-semibold"><span class="gradient-text">Logos</span></h3>
+          <p class="text-secondary text-xs mt-2 flex-1">Identidade visual única, com estudo de conceito, paleta de cores e aplicações da marca.</p>
+          <a href="#servico-logos" class="mt-4 inline-block text-center border border-white/20 rounded-full px-3 py-1.5 text-xs font-medium hover:bg-white/5 transition-colors">Acesse para saber mais</a>
         </div>
       </div>
 
@@ -944,7 +947,7 @@
       function startAutoplay() {
         if (reduceMotion || n < 2) return;
         stopAutoplay();
-        autoplayId = window.setInterval(() => goTo(active + 1), 4200);
+        autoplayId = window.setInterval(() => goTo(active + 1), 2000);
       }
       function stopAutoplay() {
         if (autoplayId) window.clearInterval(autoplayId);
