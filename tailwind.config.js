@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html", "./memorial-eterno.html", "./dentalflow.html", "./pulso-utopia.html", "./pulso-utopia-privacidade.html", "./pulso-utopia-exclusao-dados.html", "./finance.html", "./sites-academias.html", "./identidades-visuais.html", "./portfolio.html", "./pagamento-sucesso.html", "./pagamento-pendente.html", "./pagamento-erro.html", "./landing-sites.html", "./landing-portfolio.html"],
+  content: ["./index.html", "./memorial-eterno.html", "./dentalflow.html", "./pulso-utopia.html", "./pulso-utopia-privacidade.html", "./pulso-utopia-exclusao-dados.html", "./finance.html", "./sites-academias.html", "./identidades-visuais.html", "./portfolio.html", "./pagamento-sucesso.html", "./pagamento-pendente.html", "./pagamento-erro.html", "./landing-sites.html", "./landing-portfolio.html", "./landing-landingpages.html"],
   theme: {
     extend: {
       colors: {
