@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://*.googleapis.com; frame-src https://www.youtube.com; object-src 'none'; base-uri 'self'; form-action 'self'">
 <title>Recordações de Lili — Memorial Eterno</title>
 <meta name="description" content="Memorial eterno em homenagem a Lili, sua história, sua família e as lembranças de quem a ama.">
 
@@ -242,7 +243,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous" referrerpolicy="no-referrer">
 <style>
 :root{
   --bg:#070707;
@@ -996,7 +997,7 @@ body.adm-editing .welcome-overlay .adm-hero-upload{
         <span>Autorizo o envio para moderação e, se aprovada, a publicação do meu nome e da mensagem neste memorial. Meu e-mail será usado somente para a moderação e não será exibido publicamente.</span>
       </label>
       <div class="form-error" id="errConsent"></div>
-      <p class="privacy-note">Não inclua documentos, endereços, telefones ou outras informações pessoais sensíveis na mensagem.</p>
+      <p class="privacy-note">Não inclua documentos, endereços, telefones ou outras informações pessoais sensíveis na mensagem. Veja como tratamos seus dados na <a href="https://www.utopiadesenvolvimentos.com.br/privacidade.html" target="_blank" rel="noopener noreferrer" style="color:var(--gold-soft);text-decoration:underline;">Política de Privacidade</a>.</p>
       <button type="submit" class="btn">Enviar Mensagem</button>
       <div class="form-success" id="formSuccess" role="status" aria-live="polite"></div>
     </form>

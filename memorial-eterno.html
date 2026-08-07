@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://createcheckoutpreference-rze6qytqha-uc.a.run.app; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
   <title>Memorial Eterno — Homenagem digital com QR Code em placa de ACM | Utopia Desenvolvimentos</title>
   <meta name="description" content="Memorial Eterno: uma homenagem digital com fotos, histórias e mensagens, acessível por QR Code em placa de ACM prata 20x10cm. Pagamento único, sem mensalidade. Planos a partir de R$ 599,00.">
   <meta name="theme-color" content="#09090b">
@@ -419,6 +421,7 @@
         <span class="text-xs sm:text-sm text-secondary whitespace-nowrap">© <span id="currentYear"></span> Utopia Desenvolvimentos</span>
       </div>
       <div class="flex items-center gap-6">
+        <a href="privacidade.html" class="text-secondary hover:text-white transition-colors text-sm">Privacidade</a>
         <a href="mailto:utopiadesenvolvimentos@gmail.com" class="text-secondary hover:text-white transition-colors text-sm">E-mail</a>
         <a href="https://wa.me/5527996941622?text=Ol%C3%A1%21%20Conheci%20a%20Utopia%20pelo%20site." target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-white transition-colors text-sm">WhatsApp</a>
       </div>
@@ -494,6 +497,7 @@
         <p class="text-red-400 text-sm min-h-[1.2em]" id="checkoutError"></p>
         <button type="submit" id="checkoutSubmit" class="w-full bg-[#e08070] text-black rounded-full px-6 py-3 text-sm font-semibold hover:scale-[1.02] transition-transform">Ir para pagamento</button>
         <p class="text-xs text-zinc-500 text-center">Você será redirecionado para o ambiente seguro do Mercado Pago.</p>
+        <p class="text-xs text-zinc-500 text-center">Seus dados são usados só para processar o pedido e a entrega. Veja nossa <a href="privacidade.html" class="underline hover:text-zinc-300" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.</p>
       </form>
     </div>
   </div>
