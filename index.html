@@ -228,6 +228,17 @@
     .project-link:hover { transform: translateY(-2px); }
     .project-link-primary { background: #fff; color: #080808; }
     .project-link-secondary { border: 1px solid rgba(255,255,255,.18); color: #d4d4d8; }
+    .project-title-brand { background-image: linear-gradient(120deg, var(--proj-c1) 0%, var(--proj-c2) 50%, var(--proj-c1) 100%); background-size: 220% auto; background-position: 0% 50%; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; display: inline-block; animation: gradientSweep 6s ease-in-out infinite alternate; }
+    @media (prefers-reduced-motion: reduce) { .project-title-brand { animation: none; background-position: 30% 50%; } }
+    .project-link-primary.project-btn-brand { background: linear-gradient(120deg, var(--proj-c1), var(--proj-c2)); color: var(--proj-btn-text); }
+    .project-link-secondary.project-btn-brand { border-color: color-mix(in srgb, var(--proj-c1) 55%, transparent); color: var(--proj-c1); }
+    .project-link-secondary.project-btn-brand:hover { background: color-mix(in srgb, var(--proj-c1) 14%, transparent); }
+    .project-card--memorial { --proj-c1: #fcd34d; --proj-c2: #92400e; --proj-btn-text: #1c1207; }
+    .project-card--dental { --proj-c1: #6ee7b7; --proj-c2: #047857; --proj-btn-text: #052e1c; }
+    .project-card--pulso { --proj-c1: #c4b5fd; --proj-c2: #6d28d9; --proj-btn-text: #fff; }
+    .project-card--financas { --proj-c1: #7dd3fc; --proj-c2: #1d4ed8; --proj-btn-text: #04121f; }
+    .project-card--academia { --proj-c1: #fdba74; --proj-c2: #c2410c; --proj-btn-text: #210a02; }
+    .project-card--logos { --proj-c1: #6ee7b7; --proj-c2: #ffffff; --proj-btn-text: #083326; }
     .carousel-track { display: flex; height: 100%; margin: 0; padding: 0; list-style: none; transition: transform 450ms ease; }
     .carousel-slide { flex: 0 0 100%; height: 100%; }
     .carousel-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 2.25rem; height: 2.25rem; border-radius: 999px; background: rgba(0,0,0,.55); border: 1px solid rgba(255,255,255,.2); color: #fff; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(6px); transition: background 180ms ease; }
@@ -505,69 +516,69 @@
       <p class="text-secondary mt-4">De aplicativos de saúde a homenagens digitais, cada projeto abaixo nasceu para resolver um problema real e já está no ar. Encontre o que combina mais com você!</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-      <article class="project-card glass-card overflow-hidden">
+      <article class="project-card project-card--memorial glass-card overflow-hidden">
         <div class="project-preview"><img src="assets/projetos/card-memorial-eterno.webp" alt="Capa do Memorial Eterno criado em homenagem a Lili" class="project-image" loading="lazy"><span class="project-label">Homenagem digital real</span></div>
-        <div class="p-7"><span class="status-pill rounded-full px-3 py-1 text-xs">Principal linha de atuação</span><h3 class="font-heading text-2xl font-semibold mt-4">Memorial Eterno</h3><p class="text-secondary text-sm mt-2 leading-relaxed">Histórias, fotografias, mensagens e lembranças reunidas em uma homenagem delicada, acessível pelo QR Code da placa em ACM.</p><div class="project-actions"><a href="memorial-eterno.html" class="project-link project-link-primary">Conheça mais sobre o Memorial Eterno</a><a href="projetos/memorial-eterno/index.html" target="_blank" rel="noopener noreferrer" class="project-link project-link-secondary">Ver demonstração</a></div></div>
+        <div class="p-7"><span class="status-pill rounded-full px-3 py-1 text-xs">Principal linha de atuação</span><h3 class="font-heading text-2xl font-semibold mt-4"><span class="project-title-brand">Memorial Eterno</span></h3><p class="text-secondary text-sm mt-2 leading-relaxed">Histórias, fotografias, mensagens e lembranças reunidas em uma homenagem delicada, acessível pelo QR Code da placa em ACM.</p><div class="project-actions"><a href="memorial-eterno.html" class="project-link project-link-primary project-btn-brand">Conheça mais sobre o Memorial Eterno</a><a href="projetos/memorial-eterno/index.html" target="_blank" rel="noopener noreferrer" class="project-link project-link-secondary project-btn-brand">Ver demonstração</a></div></div>
       </article>
-      <article class="project-card glass-card overflow-hidden">
+      <article class="project-card project-card--dental glass-card overflow-hidden">
         <div class="project-preview"><img src="assets/projetos/card-dentalflow.webp" alt="Painel de métricas do DentalFlow com consultas, taxa de confirmação e faturamento" class="project-image" loading="lazy"><span class="project-label">Gestão para clínicas</span></div>
         <div class="p-7">
           <span class="status-pill rounded-full px-3 py-1 text-xs">Projeto publicado</span>
-          <h3 class="font-heading text-2xl font-semibold mt-4">DentalFlow</h3>
+          <h3 class="font-heading text-2xl font-semibold mt-4"><span class="project-title-brand">DentalFlow</span></h3>
           <p class="text-secondary text-sm mt-2 leading-relaxed">Uma experiência digital pensada para organizar a rotina clínica, os atendimentos e a gestão odontológica com mais clareza.</p>
           <ul class="mt-4 space-y-2 text-sm text-zinc-300">
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Agenda com confirmação automática</li>
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Prontuário e histórico do paciente</li>
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Financeiro e relatórios em tempo real</li>
           </ul>
-          <div class="project-actions"><a href="dentalflow.html" class="project-link project-link-primary">Conheça mais sobre o DentalFlow</a><a href="https://dentalflow.ai.studio/" target="_blank" rel="noopener noreferrer" class="project-link project-link-secondary">Acessar DentalFlow</a></div>
+          <div class="project-actions"><a href="dentalflow.html" class="project-link project-link-primary project-btn-brand">Conheça mais sobre o DentalFlow</a><a href="https://dentalflow.ai.studio/" target="_blank" rel="noopener noreferrer" class="project-link project-link-secondary project-btn-brand">Acessar DentalFlow</a></div>
         </div>
       </article>
-      <article class="project-card glass-card overflow-hidden">
+      <article class="project-card project-card--pulso glass-card overflow-hidden">
         <div class="project-preview"><img src="assets/projetos/card-pulso-utopia.webp" alt="Telas do app Pulso Utopia com medicamentos, adesão do dia e bem-estar" class="project-image" loading="lazy"><span class="project-label">Cuidado e rotina de saúde</span></div>
         <div class="p-7">
           <span class="status-pill rounded-full px-3 py-1 text-xs">Projeto publicado</span>
-          <h3 class="font-heading text-2xl font-semibold mt-4">Pulso Utopia</h3>
+          <h3 class="font-heading text-2xl font-semibold mt-4"><span class="project-title-brand">Pulso Utopia</span></h3>
           <p class="text-secondary text-sm mt-2 leading-relaxed">Sua saúde no ritmo certo, todos os dias. Medicamentos, consultas, tarefas e compromissos organizados em um só lugar, com alarmes sonoros e avisos por voz — pensado para idosos, pessoas com condições crônicas e para quem cuida delas.</p>
           <ul class="mt-4 space-y-2 text-sm text-zinc-300">
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Alarmes com som e voz, mesmo com o app fechado</li>
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Medicamentos, consultas e tarefas sincronizados com o Google Agenda</li>
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Teste grátis por 14 dias, depois R$ 14,99/mês, sem fidelidade</li>
           </ul>
-          <div class="project-actions"><a href="pulso-utopia.html" class="project-link project-link-primary">Conheça mais sobre o Pulso Utopia</a><a href="pulso-utopia.html#como-instalar" class="project-link project-link-secondary">Baixar o app</a></div>
+          <div class="project-actions"><a href="pulso-utopia.html" class="project-link project-link-primary project-btn-brand">Conheça mais sobre o Pulso Utopia</a><a href="pulso-utopia.html#como-instalar" class="project-link project-link-secondary project-btn-brand">Baixar o app</a></div>
         </div>
       </article>
-      <article class="project-card glass-card overflow-hidden">
+      <article class="project-card project-card--financas glass-card overflow-hidden">
         <div class="project-preview"><img src="assets/projetos/card-financas-pro.webp" alt="Painel do FinançasPro com receitas, despesas, faturas de cartões e gráficos" class="project-image" loading="lazy"><span class="project-label">Aplicativo financeiro</span></div>
         <div class="p-7">
           <span class="rounded-full px-3 py-1 text-xs border border-amber-300/25 text-amber-200">Em desenvolvimento</span>
-          <h3 class="font-heading text-2xl font-semibold mt-4">App de Finanças</h3>
+          <h3 class="font-heading text-2xl font-semibold mt-4"><span class="project-title-brand">App de Finanças</span></h3>
           <p class="text-secondary text-sm mt-2 leading-relaxed">Controle de receitas, despesas e metas em uma visão simples, para ajudar nas decisões do dia a dia.</p>
           <ul class="mt-4 space-y-2 text-sm text-zinc-300">
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Controle de receitas e despesas</li>
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Metas financeiras com progresso mensal</li>
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>App instalável (PWA), sem loja de aplicativos</li>
           </ul>
-          <div class="project-actions"><a href="finance.html" class="project-link project-link-primary">Conheça mais sobre o Finance</a><span class="project-link project-link-secondary opacity-70">Demonstração em breve</span></div>
+          <div class="project-actions"><a href="finance.html" class="project-link project-link-primary project-btn-brand">Conheça mais sobre o Finance</a><span class="project-link project-link-secondary opacity-70">Demonstração em breve</span></div>
         </div>
       </article>
-      <article class="project-card glass-card overflow-hidden">
+      <article class="project-card project-card--academia glass-card overflow-hidden">
         <div class="project-preview"><img src="assets/projetos/card-gestao-academias.webp" alt="Painel administrativo do sistema de gestão para academias, com laptop e celular" class="project-image" loading="lazy"><span class="project-label">Gestão completa para academias</span></div>
         <div class="p-7">
           <span class="status-pill rounded-full px-3 py-1 text-xs">Projeto publicado</span>
-          <h3 class="font-heading text-2xl font-semibold mt-4">Gestão para Academias</h3>
+          <h3 class="font-heading text-2xl font-semibold mt-4"><span class="project-title-brand">Gestão para Academias</span></h3>
           <p class="text-secondary text-sm mt-2 leading-relaxed">Sistema completo para cadastro de alunos, fichas de treino com fotos reais, pagamentos e acompanhamento de saúde.</p>
           <ul class="mt-4 space-y-2 text-sm text-zinc-300">
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Alunos, planos e vencimentos organizados</li>
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>Ficha de treino com fotos reais dos exercícios</li>
             <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>A partir de R$ 199,00/mês, sem fidelidade</li>
           </ul>
-          <div class="project-actions"><a href="sites-academias.html" class="project-link project-link-primary">Conheça mais sobre a Gestão para Academias</a><a href="https://dianabvieira.github.io/Site_Academia_Modelo01/" target="_blank" rel="noopener noreferrer" class="project-link project-link-secondary">Ver demonstração ao vivo</a></div>
+          <div class="project-actions"><a href="sites-academias.html" class="project-link project-link-primary project-btn-brand">Conheça mais sobre a Gestão para Academias</a><a href="https://dianabvieira.github.io/Site_Academia_Modelo01/" target="_blank" rel="noopener noreferrer" class="project-link project-link-secondary project-btn-brand">Ver demonstração ao vivo</a></div>
         </div>
       </article>
-      <article class="project-card glass-card overflow-hidden">
+      <article class="project-card project-card--logos glass-card overflow-hidden">
         <div class="project-preview"><img src="assets/projetos/card-logos-identidades.webp" alt="Estudos fictícios de logos e identidades visuais" class="project-image" loading="lazy"><span class="project-label">Marca e identidade</span></div>
-        <div class="p-7"><span class="rounded-full px-3 py-1 text-xs border border-white/15 text-zinc-300">Estudos autorais fictícios</span><h3 class="font-heading text-2xl font-semibold mt-4">Logos e Identidades Visuais</h3><p class="text-secondary text-sm mt-2 leading-relaxed">Conceitos de marca com logo, paleta, tipografia e aplicações criados para demonstrar diferentes possibilidades visuais.</p><div class="project-actions"><a href="identidades-visuais.html" class="project-link project-link-primary">Conheça mais sobre Logos e Identidades</a><a href="assets/identidades-ficticias.webp" target="_blank" rel="noopener noreferrer" class="project-link project-link-secondary">Abrir galeria</a></div></div>
+        <div class="p-7"><span class="rounded-full px-3 py-1 text-xs border border-white/15 text-zinc-300">Estudos autorais fictícios</span><h3 class="font-heading text-2xl font-semibold mt-4"><span class="project-title-brand">Logos e Identidades Visuais</span></h3><p class="text-secondary text-sm mt-2 leading-relaxed">Conceitos de marca com logo, paleta, tipografia e aplicações criados para demonstrar diferentes possibilidades visuais.</p><div class="project-actions"><a href="identidades-visuais.html" class="project-link project-link-primary project-btn-brand">Conheça mais sobre Logos e Identidades</a><a href="assets/identidades-ficticias.webp" target="_blank" rel="noopener noreferrer" class="project-link project-link-secondary project-btn-brand">Abrir galeria</a></div></div>
       </article>
     </div>
   </section>
