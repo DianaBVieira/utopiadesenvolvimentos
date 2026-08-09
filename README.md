@@ -13,6 +13,16 @@ O Memorial Eterno é uma homenagem digital personalizada, acessada por QR Code e
 
 Os valores são cobrados uma única vez. Não há mensalidade enquanto o memorial permanecer hospedado nas plataformas gratuitas utilizadas, conforme a condição apresentada na página.
 
+### Complemento: Lembrança para o Lar
+
+O **Azulejo Memorial 20 × 20 cm com suporte de mesa** é oferecido como complemento de um plano Memorial Eterno por **R$ 89,90**. A peça inclui foto personalizada e o QR Code de acesso ao memorial.
+
+A página possui uma seção própria com a arte real do produto, características, preço e um botão `Quero adicionar ao meu pedido`. O botão abre o WhatsApp com uma mensagem que identifica claramente o complemento e seu valor.
+
+**Motivo:** apresentar o produto no momento em que a família escolhe a homenagem e permitir a venda conjunta sem alterar silenciosamente a cobrança do Mercado Pago. Como o código-fonte da função implantada `createCheckoutPreference` não está versionado neste repositório, a inclusão do azulejo é confirmada manualmente no atendimento antes do pagamento. Isso evita que o frontend mostre um total de R$ 89,90 a mais sem que o servidor efetivamente cobre esse valor.
+
+O arquivo visual utilizado na seção é `assets/memorial-lar-20x20.png`.
+
 ## Revisão do fluxo de compra
 
 O fluxo público do Memorial Eterno passou por uma auditoria em modo somente leitura antes das alterações. Foram inspecionados:
