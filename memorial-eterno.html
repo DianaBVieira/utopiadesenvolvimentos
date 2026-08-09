@@ -507,7 +507,7 @@
           </div>
           <div>
             <label class="block text-xs uppercase tracking-widest text-zinc-400 mb-1" for="ckWhatsapp">WhatsApp (com DDD)</label>
-            <input type="tel" id="ckWhatsapp" name="clienteWhatsapp" required inputmode="tel" autocomplete="tel" minlength="10" maxlength="16" pattern="[0-9() +.-]{10,16}" title="Informe o WhatsApp com DDD" placeholder="27 99999-9999" class="w-full rounded-lg bg-white/5 border border-white/15 px-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#e08070]">
+            <input type="tel" id="ckWhatsapp" name="clienteWhatsapp" required inputmode="tel" autocomplete="tel" minlength="10" maxlength="16" title="Informe o WhatsApp com DDD" placeholder="27 99999-9999" class="w-full rounded-lg bg-white/5 border border-white/15 px-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#e08070]">
           </div>
         </div>
 
@@ -677,6 +677,10 @@
     checkoutForm.addEventListener('submit', async function (e) {
       e.preventDefault();
       checkoutError.textContent = '';
+      if (window.location.protocol === 'file:') {
+        checkoutError.textContent = 'Para testar o pagamento, abra a página pelo endereço de pré-visualização local, não diretamente pelo arquivo.';
+        return;
+      }
       if (!checkoutForm.reportValidity()) return;
 
       const whatsappInput = document.getElementById('ckWhatsapp');

@@ -198,6 +198,10 @@ npm run build:css
 
 Depois, sirva os arquivos por um servidor HTTP local. Abrir os arquivos diretamente pelo protocolo `file://` pode apresentar comportamento diferente do site publicado.
 
+Para testar o checkout localmente, use `http://127.0.0.1:4173` ou `http://localhost:4173`. Essas origens estão autorizadas no CORS da função. O protocolo `file://` envia origem `null` e é recusado intencionalmente; a página agora mostra uma orientação clara em vez de tentar iniciar o pagamento nesse modo.
+
+O atributo `pattern` do campo de WhatsApp foi removido porque versões atuais do Chrome passaram a interpretar padrões HTML com regras mais restritas. A validação permanece no JavaScript, que aceita somente 10 ou 11 dígitos após remover espaços e sinais de formatação.
+
 ## Publicação
 
 O domínio público configurado no repositório é `www.utopiadesenvolvimentos.com.br`, conforme o arquivo `CNAME`. Antes de publicar mudanças relacionadas ao checkout:
