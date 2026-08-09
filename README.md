@@ -149,6 +149,8 @@ O arquivo `css/tailwind.css` foi recompilado após a inclusão das novas classes
 - resposta CORS `204` para o domínio oficial;
 - rejeição `400` para uma solicitação vazia, sem criação de pedido ou preferência.
 
+> **Teste seguro confirmado:** uma solicitação vazia enviada à função retornou HTTP `400`. A validação foi encerrada antes da gravação no banco e antes da criação de qualquer pedido ou preferência de pagamento no Mercado Pago.
+
 ## Proteções da integração do azulejo
 
 - O navegador envia somente `adicionarAzulejo: true` ou `false`.
@@ -160,6 +162,12 @@ O arquivo `css/tailwind.css` foi recompilado após a inclusão das novas classes
 - Pagamentos com valor divergente recebem o estado `valor_divergente` e não são promovidos automaticamente.
 - As chaves do Mercado Pago continuam armazenadas como segredos do Firebase e não foram incluídas no HTML, no JavaScript público ou no GitHub.
 - O código interno das funções foi mantido fora deste repositório porque ele é público.
+
+### Aviso para futuras publicações das funções
+
+A cópia local atualizada e combinada está em `site-repo/functions/index.js`. Ela contém, no mesmo arquivo, a cobrança do Azulejo Memorial, a validação contra valor divergente, o registro dos itens no CRM e a notificação `payment_paid` para o painel central.
+
+O Claude ou qualquer outra sessão de desenvolvimento **não deve publicar novamente uma cópia antiga das funções**. Antes de executar um deploy, deve usar `site-repo/functions/index.js` como fonte atual, validar sua sintaxe e confirmar a presença de `HOME_MEMORIAL`, `valor_divergente`, `INGEST_SHARED_SECRET` e `notifyCentralPanel`. Esse arquivo permanece ignorado pelo Git e fora do repositório público para não expor a implementação interna do pagamento.
 
 ## Limites da validação
 
