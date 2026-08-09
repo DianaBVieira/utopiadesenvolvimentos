@@ -17,9 +17,13 @@ Os valores são cobrados uma única vez. Não há mensalidade enquanto o memoria
 
 O **Azulejo Memorial 20 × 20 cm com suporte de mesa** é oferecido como complemento de um plano Memorial Eterno por **R$ 89,90**. A peça inclui foto personalizada e o QR Code de acesso ao memorial.
 
-A página possui uma seção própria com a arte real do produto, características, preço e um botão `Quero adicionar ao meu pedido`. O botão abre o WhatsApp com uma mensagem que identifica claramente o complemento e seu valor.
+A página possui uma seção própria com a arte real do produto, características, preço e um botão `Escolher plano e adicionar`. Ao usar esse caminho, o complemento fica pré-selecionado no checkout. Ele também pode ser marcado ou desmarcado diretamente no formulário, que atualiza o total antes de seguir ao Mercado Pago.
 
-**Motivo:** apresentar o produto no momento em que a família escolhe a homenagem e permitir a venda conjunta sem alterar silenciosamente a cobrança do Mercado Pago. Como o código-fonte da função implantada `createCheckoutPreference` não está versionado neste repositório, a inclusão do azulejo é confirmada manualmente no atendimento antes do pagamento. Isso evita que o frontend mostre um total de R$ 89,90 a mais sem que o servidor efetivamente cobre esse valor.
+As funções implantadas foram recuperadas e atualizadas diretamente no Firebase, mas seu código interno permanece fora deste repositório público. A função `createCheckoutPreference` recebe apenas a escolha booleana do complemento e aplica no servidor o preço fixo de R$ 89,90, acrescentando o azulejo como um segundo item da preferência. O frete adicional permanece em R$ 0,00. O pedido pendente registra os itens e o valor total.
+
+O webhook preserva a validação de assinatura existente e agora também compara o valor aprovado com o total calculado pelo servidor. Após a aprovação, a informação `adicionarAzulejo` e os itens comprados são gravados no CRM do memorial.
+
+**Motivo:** cobrar o plano e o azulejo juntos sem confiar em preços enviados pelo navegador, mantendo rastreabilidade no pedido e evitando que um pagamento de valor divergente seja processado automaticamente.
 
 O arquivo visual utilizado na seção é `assets/memorial-lar-20x20.png`.
 

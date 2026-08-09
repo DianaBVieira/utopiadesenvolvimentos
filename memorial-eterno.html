@@ -376,8 +376,8 @@
               <li>✓ Suporte de mesa incluído</li>
             </ul>
 
-            <a href="https://wa.me/5527996941622?text=Ol%C3%A1%21%20Quero%20contratar%20o%20Memorial%20Eterno%20e%20adicionar%20o%20Azulejo%20Memorial%2020x20%20cm%20com%20suporte%20por%20R%24%2089%2C90." target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-[#d8a943] px-6 py-3 text-sm font-bold text-black transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#f2d27d] focus:ring-offset-2 focus:ring-offset-[#101012]">Quero adicionar ao meu pedido</a>
-            <p class="text-[11px] text-zinc-500 mt-3 leading-relaxed">Complemento disponível junto à contratação de um plano Memorial Eterno. A inclusão é confirmada no atendimento antes do pagamento.</p>
+            <a href="#planos-memorial" id="addHomeMemorialButton" class="mt-6 inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-[#d8a943] px-6 py-3 text-sm font-bold text-black transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#f2d27d] focus:ring-offset-2 focus:ring-offset-[#101012]">Escolher plano e adicionar</a>
+            <p class="text-[11px] text-zinc-500 mt-3 leading-relaxed">Complemento disponível junto à contratação de um plano Memorial Eterno. O valor de R$ 89,90 entra no mesmo pagamento, sem cobrança de frete adicional.</p>
           </div>
         </div>
       </article>
@@ -484,6 +484,14 @@
       <form id="checkoutForm" method="post" action="memorial-eterno.html" class="mt-6 space-y-4">
         <input type="hidden" id="checkoutPlano" value="essencial">
 
+        <label class="flex items-start gap-3 rounded-2xl border border-[#d8a943]/35 bg-[#d8a943]/[0.06] p-4 cursor-pointer">
+          <input type="checkbox" id="ckAdicionarAzulejo" name="adicionarAzulejo" class="mt-1 accent-[#d8a943]">
+          <span>
+            <strong class="block text-sm text-white">Adicionar Azulejo Memorial 20 × 20 cm</strong>
+            <span class="block text-xs text-zinc-400 mt-1">Com suporte de mesa por R$ 89,90. Frete adicional: R$ 0,00.</span>
+          </span>
+        </label>
+
         <div>
           <label class="block text-xs uppercase tracking-widest text-zinc-400 mb-1" for="ckNomeHomenageado">Nome do homenageado</label>
           <input type="text" id="ckNomeHomenageado" name="nomeHomenageado" required minlength="2" maxlength="100" autocomplete="off" class="w-full rounded-lg bg-white/5 border border-white/15 px-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#e08070]" placeholder="Ex: Maria da Conceição Silva">
@@ -577,10 +585,31 @@
     const checkoutDialog = document.getElementById('checkoutDialog');
     const checkoutClose = document.getElementById('checkoutClose');
     const PLANO_DETAILS = {
-      essencial: { label: 'Essencial', nome: 'Memorial Essencial', preco: 'R$ 599,00', fotos: 'até 12 fotografias' },
-      legado: { label: 'Legado', nome: 'Memorial Legado', preco: 'R$ 999,00', fotos: 'até 50 fotografias' }
+      essencial: { label: 'Essencial', nome: 'Memorial Essencial', valor: 599, fotos: 'até 12 fotografias' },
+      legado: { label: 'Legado', nome: 'Memorial Legado', valor: 999, fotos: 'até 50 fotografias' }
     };
+    const AZULEJO_PRICE = 89.90;
+    const addHomeMemorialButton = document.getElementById('addHomeMemorialButton');
+    const adicionarAzulejoInput = document.getElementById('ckAdicionarAzulejo');
+    let adicionarAzulejoNoProximoCheckout = false;
     let checkoutTrigger = null;
+
+    function formatCurrency(value) {
+      return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    function updateCheckoutSummary() {
+      const details = PLANO_DETAILS[document.getElementById('checkoutPlano').value];
+      if (!details) return;
+      const incluiAzulejo = adicionarAzulejoInput.checked;
+      document.getElementById('checkoutResumoPreco').textContent = formatCurrency(details.valor + (incluiAzulejo ? AZULEJO_PRICE : 0));
+      document.getElementById('checkoutResumoDetalhes').textContent = 'Pagamento único, sem mensalidade. Inclui site com ' + details.fotos + ', placa com QR Code e envio ao endereço informado.' + (incluiAzulejo ? ' Inclui também o Azulejo Memorial 20 × 20 cm com suporte, sem frete adicional.' : '');
+    }
+
+    addHomeMemorialButton.addEventListener('click', function () {
+      adicionarAzulejoNoProximoCheckout = true;
+    });
+    adicionarAzulejoInput.addEventListener('change', updateCheckoutSummary);
 
     function getFocusableElements(container) {
       return Array.from(container.querySelectorAll('button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])'))
@@ -596,8 +625,9 @@
         document.getElementById('checkoutPlano').value = plano;
         document.getElementById('checkoutPlanoLabel').textContent = details.label;
         document.getElementById('checkoutResumoPlano').textContent = details.nome;
-        document.getElementById('checkoutResumoPreco').textContent = details.preco;
-        document.getElementById('checkoutResumoDetalhes').textContent = 'Pagamento único, sem mensalidade. Inclui site com ' + details.fotos + ', placa com QR Code e envio ao endereço informado.';
+        adicionarAzulejoInput.checked = adicionarAzulejoNoProximoCheckout;
+        adicionarAzulejoNoProximoCheckout = false;
+        updateCheckoutSummary();
         checkoutError.textContent = '';
         checkoutOverlay.classList.remove('hidden');
         checkoutOverlay.classList.add('flex');
@@ -668,6 +698,7 @@
           clienteEmail: document.getElementById('ckEmail').value.trim(),
           clienteWhatsapp: whatsappDigits,
           plano: document.getElementById('checkoutPlano').value,
+          adicionarAzulejo: adicionarAzulejoInput.checked,
           endereco: {
             cep: document.getElementById('ckCep').value.replace(/\D/g, ''),
             rua: document.getElementById('ckRua').value.trim(),

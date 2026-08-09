@@ -5,3 +5,15 @@ Thumbs.db
 # ferramentas e worktrees locais de operação, não fazem parte do site
 .tools/
 .publish-memorial/
+
+# funções de pagamento mantidas fora deste repositório público
+functions/
+.firebaserc
+firebase.json
+
+# artefatos locais de recuperação e verificação
+*.zip
+recovered-webhook/
+design-qa*.png
+design-qa.md
+implementation-addon-*.png
