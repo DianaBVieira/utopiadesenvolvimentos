@@ -131,26 +131,49 @@ O arquivo `css/tailwind.css` foi recompilado após a inclusão das novas classes
 - carregamento local da página do Memorial Eterno;
 - apresentação correta dos planos Essencial e Legado;
 - correspondência entre plano, preço e quantidade de fotografias no modal;
+- pré-seleção do azulejo ao usar o botão `Escolher plano e adicionar`;
+- atualização imediata do total ao marcar ou desmarcar o complemento;
+- total de R$ 688,90 para Memorial Essencial com azulejo;
+- total de R$ 1.088,90 para Memorial Legado com azulejo;
+- retorno ao preço original do plano quando o complemento é desmarcado;
 - exibição do envio como incluído no valor;
+- exibição de frete adicional de R$ 0,00 para o azulejo;
 - bloqueio do formulário vazio antes de qualquer chamada externa;
 - foco levado ao primeiro campo obrigatório após tentativa de envio vazio;
 - fechamento do modal com `Esc` e retorno do foco ao botão de compra;
-- ausência de erros e avisos no console durante os testes.
+- ausência de erros e avisos no console durante os testes;
+- ausência de rolagem horizontal no checkout;
+- compilação e validação sintática da função atualizada;
+- publicação das funções `createCheckoutPreference` e `mercadoPagoWebhook` no Firebase;
+- estado `ACTIVE` confirmado para as duas funções após a publicação;
+- resposta CORS `204` para o domínio oficial;
+- rejeição `400` para uma solicitação vazia, sem criação de pedido ou preferência.
+
+## Proteções da integração do azulejo
+
+- O navegador envia somente `adicionarAzulejo: true` ou `false`.
+- O preço de R$ 89,90 é definido exclusivamente no servidor.
+- O azulejo é enviado ao Mercado Pago como um item separado do plano.
+- O pedido pendente registra plano, complemento, itens e total esperado.
+- O webhook continua validando a assinatura enviada pelo Mercado Pago.
+- O webhook compara o valor aprovado com o total calculado pelo servidor antes de criar o memorial e o registro no CRM.
+- Pagamentos com valor divergente recebem o estado `valor_divergente` e não são promovidos automaticamente.
+- As chaves do Mercado Pago continuam armazenadas como segredos do Firebase e não foram incluídas no HTML, no JavaScript público ou no GitHub.
+- O código interno das funções foi mantido fora deste repositório porque ele é público.
 
 ## Limites da validação
 
-O serviço responsável por criar a preferência de pagamento não está neste repositório. Para manter os testes sem efeitos financeiros, não foram executados:
+Para manter os testes sem efeitos financeiros e sem gerar pedidos fictícios, não foram executados:
 
 - criação real de preferência no Mercado Pago;
 - pagamento com Pix, cartão ou boleto;
 - confirmação de parcelamento e meios habilitados;
 - retorno real de pagamento aprovado, pendente ou recusado;
-- processamento de webhooks;
-- validação de assinatura e idempotência no backend;
-- conferência de preços e planos no servidor;
-- gravação de pedido no banco de dados.
+- recebimento de um webhook real do Mercado Pago;
+- gravação de um pedido real no banco de dados;
+- criação real do memorial e do registro no CRM após pagamento.
 
-Esses itens devem ser verificados separadamente com acesso às configurações do Mercado Pago e do Google Cloud/Firebase, preferencialmente em ambiente de teste ou por meio de uma compra controlada.
+As regras de preço, assinatura, idempotência e gravação foram inspecionadas no código implantado. A confirmação completa do ciclo deve ser feita posteriormente com uma compra controlada de baixo risco ou com credenciais de teste do Mercado Pago.
 
 ## Estrutura relevante
 
