@@ -9,6 +9,7 @@ A Utopia Desenvolvimentos oferece: criação de logotipos e identidade visual, d
 - [Página inicial](https://www.utopiadesenvolvimentos.com.br/): visão geral de todos os serviços, planos e perguntas frequentes.
 - [Memorial Eterno](https://www.utopiadesenvolvimentos.com.br/memorial-eterno.html): homenagem digital com QR Code em porcelana para quem perdeu alguém querido.
 - [Pulso Utopia](https://www.utopiadesenvolvimentos.com.br/pulso-utopia.html): aplicativo de rotina de saúde, lembretes de medicamentos, consultas e tarefas para idosos e pessoas com condições crônicas.
+- [VemPraPista](https://www.utopiadesenvolvimentos.com.br/vemprapista.html): aplicativo para encontrar corridas de rua, caminhadas e trails, cadastrar inscrições com IA e receber lembretes da prova e da retirada do kit. Disponível na Google Play.
 - [DentalFlow](https://www.utopiadesenvolvimentos.com.br/dentalflow.html): sistema de gestão para clínicas odontológicas.
 - [Sites para academias](https://www.utopiadesenvolvimentos.com.br/sites-academias.html): sites institucionais voltados para academias e estúdios fitness.
 - [Identidades visuais](https://www.utopiadesenvolvimentos.com.br/identidades-visuais.html): criação de logotipos e sistemas de identidade visual.
